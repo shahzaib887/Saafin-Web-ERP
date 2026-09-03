@@ -1,26 +1,435 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ═══════════════════════════════════════════════════════════════
+   SAAFIN — GLOBAL DESIGN SYSTEM
+   Shadcn + Tailwind + Saafin Brand Tokens
+   Black & White Premium Theme
+   ═══════════════════════════════════════════════════════════════ */
+
+@custom-variant dark (&:is(.dark *));
+
+
+/* ═══════════════════════════════════════════════════════════════
+   1. SHADCN / TAILWIND THEME
+   Keep these semantic tokens for shadcn components.
+   ═══════════════════════════════════════════════════════════════ */
 
 @theme inline {
+  /* ─── Shadcn semantic colors ─── */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* ─── Charts ─── */
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* ─── Sidebar ─── */
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* ─── Fonts ─── */
+
+  --font-sans: var(--font-sans-brand);
+  --font-heading: var(--font-display-brand);
+  --font-mono: var(--font-mono-brand);
+
+  /* ─── Shadcn radius system ─── */
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+/* ═══════════════════════════════════════════════════════════════
+   2. SAAFIN BRAND TOKENS
+   These are intentionally separate from Shadcn semantic tokens.
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme inline {
+
+  /* ─────────────────────────────────────────────────────────────
+     BRAND COLORS
+     ───────────────────────────────────────────────────────────── */
+
+  --color-saafin-primary-bg: #ffffff;
+  --color-saafin-primary-text: #121212;
+
+  --color-saafin-secondary-text: #0d0d0d;
+
+  --color-saafin-muted: #9a9a9a;
+  --color-saafin-subtle: #e5e5e5;
+  --color-saafin-border: #d4d4d4;
+  --color-saafin-surface: #f5f5f5;
+  --color-saafin-ghost: #fafafa;
+
+  /* Dark */
+
+  --color-saafin-dark-bg: #121212;
+  --color-saafin-dark-text: #ffffff;
+  --color-saafin-dark-muted: #888888;
+  --color-saafin-dark-surface: #1a1a1a;
+  --color-saafin-dark-border: #2a2a2a;
+
+
+  /* ─────────────────────────────────────────────────────────────
+     TYPOGRAPHY
+     ───────────────────────────────────────────────────────────── */
+
+  --font-sans-brand: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display-brand: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-brand: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Font sizes */
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+
+  /* Font weights */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line heights */
+
+  --leading-none: 1;
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose: 2;
+
+  /* Letter spacing */
+
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+
+  /* ─────────────────────────────────────────────────────────────
+     SPACING
+     ───────────────────────────────────────────────────────────── */
+
+  --spacing-px: 1px;
+
+  --spacing-0: 0px;
+  --spacing-0-5: 0.125rem;
+  --spacing-1: 0.25rem;
+  --spacing-1-5: 0.375rem;
+  --spacing-2: 0.5rem;
+  --spacing-2-5: 0.625rem;
+  --spacing-3: 0.75rem;
+  --spacing-3-5: 0.875rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
+  --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
+  --spacing-40: 10rem;
+  --spacing-44: 11rem;
+  --spacing-48: 12rem;
+  --spacing-52: 13rem;
+  --spacing-56: 14rem;
+  --spacing-60: 15rem;
+  --spacing-64: 16rem;
+  --spacing-72: 18rem;
+  --spacing-80: 20rem;
+  --spacing-96: 24rem;
+
+
+  /* ─────────────────────────────────────────────────────────────
+     BRAND RADIUS
+     ───────────────────────────────────────────────────────────── */
+
+  --radius-saafin-none: 0px;
+  --radius-saafin-sm: 0.25rem;
+  --radius-saafin-md: 0.375rem;
+  --radius-saafin-lg: 0.5rem;
+  --radius-saafin-xl: 0.75rem;
+  --radius-saafin-2xl: 1rem;
+  --radius-saafin-3xl: 1.5rem;
+  --radius-saafin-4xl: 2rem;
+  --radius-saafin-full: 9999px;
+
+
+  /* ─────────────────────────────────────────────────────────────
+     BRAND SHADOWS
+     ───────────────────────────────────────────────────────────── */
+
+  --shadow-saafin-sm:
+    0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  --shadow-saafin-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.08),
+    0 2px 4px -2px rgb(0 0 0 / 0.08);
+
+  --shadow-saafin-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.08),
+    0 4px 6px -4px rgb(0 0 0 / 0.08);
+
+  --shadow-saafin-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.08),
+    0 8px 10px -6px rgb(0 0 0 / 0.08);
+
+  --shadow-saafin-2xl:
+    0 25px 50px -12px rgb(0 0 0 / 0.15);
+
+  --shadow-saafin-inner:
+    inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+
+  /* ─────────────────────────────────────────────────────────────
+     TRANSITIONS
+     ───────────────────────────────────────────────────────────── */
+
+  --transition-saafin-fast:
+    150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --transition-saafin-base:
+    200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --transition-saafin-slow:
+    300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --transition-saafin-slower:
+    500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+  /* ─────────────────────────────────────────────────────────────
+     Z-INDEX
+     ───────────────────────────────────────────────────────────── */
+
+  --z-saafin-dropdown: 1000;
+  --z-saafin-sticky: 1020;
+  --z-saafin-fixed: 1030;
+  --z-saafin-modal-backdrop: 1040;
+  --z-saafin-modal: 1050;
+  --z-saafin-popover: 1060;
+  --z-saafin-tooltip: 1070;
+
+
+  /* ─────────────────────────────────────────────────────────────
+     CONTAINERS
+     ───────────────────────────────────────────────────────────── */
+
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+
+
+  /* ─────────────────────────────────────────────────────────────
+     BREAKPOINTS
+     ───────────────────────────────────────────────────────────── */
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   3. SHADCN LIGHT THEME
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+
+  --radius: 0.625rem;
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   4. SHADCN DARK THEME
+   ═══════════════════════════════════════════════════════════════ */
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   5. BASE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans-brand);
+  }
 }
