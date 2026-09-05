@@ -33,6 +33,7 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
+
       tl.from(imgRef.current, {
         scale: 1.15,
         opacity: 0,
