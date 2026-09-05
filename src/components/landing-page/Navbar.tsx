@@ -20,9 +20,24 @@ const navActions = [
   { label: "CART (0)", icon: CartIcon },
 ];
 
+// Mobile left links — stacked vertically
+const mobileLeftLinks = [
+  { label: "PRODUCTS", href: "/products" },
+  { label: "PRICING", href: "/pricing" },
+  { label: "ABOUT", href: "/about" },
+];
+
+// Mobile right links — stacked vertically
+const mobileRightLinks = [
+  { label: "LOGIN", href: "/login" },
+  { label: "REGISTER", href: "/register" },
+  { label: "ORDER", href: "/order" },
+];
+
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -38,71 +53,137 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      ref={navRef}
-      className={`
-        fixed top-0 left-0 right-0 z-50
-        transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
-        ${scrolled
-          ? "bg-saafin-primary-bg/95 backdrop-blur-md shadow-saafin-sm h-14"
-          : "bg-transparent h-20"
-        }
-      `}
-    >
-      <div className="mx-auto max-w-7xl px-8 h-full">
-        <div className="flex h-full items-center justify-between">
-          {/* Left — Nav Links */}
-          <div className="flex items-center gap-10">
+    <>
+      <nav
+        ref={navRef}
+        className={`
+          fixed top-0 left-0 right-0 z-50
+          transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
+          ${scrolled
+            ? "bg-saafin-primary-bg/95 backdrop-blur-md shadow-saafin-sm h-14"
+            : "bg-transparent h-20 sm:h-24 md:h-20"
+          }
+        `}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 h-full">
+          <div className="flex h-full items-center justify-between relative">
+            {/* ─── Desktop Left — Nav Links ─── */}
+            <div className="hidden md:flex items-center gap-10">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`
+                    font-medium tracking-wider text-saafin-primary-text
+                    transition-all duration-500
+                    hover:text-saafin-muted
+                    ${scrolled ? "text-[10px]" : "text-xs"}
+                  `}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            {/* ─── Mobile Left — 3 Links (VERTICAL STACK) ─── */}
+            <div className="flex md:hidden flex-col items-start gap-0">
+              {mobileLeftLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`
+                    font-medium tracking-wider text-saafin-primary-text
+                    transition-all duration-300
+                    hover:text-saafin-muted
+                    text-[10px] leading-tight py-0.5
+                  `}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            {/* ─── Center — Logo (always centered) ─── */}
+            <a
+              href="/"
+              className={`
+                absolute left-1/2 -translate-x-1/2
+                font-bold tracking-tight text-saafin-primary-text
+                select-none transition-all duration-500
+                ${scrolled ? "text-xl md:text-2xl" : "text-2xl md:text-4xl"}
+              `}
+            >
+              SAAFIN
+            </a>
+
+            {/* ─── Desktop Right — Actions ─── */}
+            <div className="hidden md:flex items-center gap-8">
+              {navActions.map((action) => (
+                <button
+                  key={action.label}
+                  className={`
+                    flex items-center gap-2
+                    font-medium tracking-wider text-saafin-primary-text
+                    transition-all duration-500
+                    hover:text-saafin-muted
+                    ${scrolled ? "text-[10px]" : "text-xs"}
+                  `}
+                >
+                  <action.icon className={`transition-all duration-500 ${scrolled ? "h-3 w-3" : "h-4 w-4"}`} />
+                  <span className={scrolled ? "hidden lg:inline" : ""}>{action.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* ─── Mobile Right — 3 Links (VERTICAL STACK) ─── */}
+            <div className="flex md:hidden flex-col items-end gap-0">
+              {mobileRightLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`
+                    font-medium tracking-wider text-saafin-primary-text
+                    transition-all duration-300
+                    hover:text-saafin-muted
+                    text-[10px] leading-tight py-0.5
+                  `}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* ─── Mobile Menu Overlay ─── */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-saafin-primary-bg/98 backdrop-blur-lg pt-20">
+          <div className="flex flex-col items-center gap-8 py-12">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`
-                  font-medium tracking-wider text-saafin-primary-text
-                  transition-all duration-500
-                  hover:text-saafin-muted
-                  ${scrolled ? "text-[10px]" : "text-xs"}
-                `}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-xl font-medium tracking-wider text-saafin-primary-text hover:text-saafin-muted transition-colors"
               >
                 {link.label}
               </a>
             ))}
-          </div>
-
-          {/* Center — Logo */}
-          <a
-            href="/"
-            className={`
-              absolute left-1/2 -translate-x-1/2
-              font-bold tracking-tight text-saafin-primary-text
-              select-none transition-all duration-500
-              ${scrolled ? "text-2xl" : "text-4xl"}
-            `}
-          >
-            SAAFIN
-          </a>
-
-          {/* Right — Actions */}
-          <div className="flex items-center gap-8">
+            <div className="w-16 h-px bg-saafin-muted/30 my-4" />
             {navActions.map((action) => (
               <button
                 key={action.label}
-                className={`
-                  flex items-center gap-2
-                  font-medium tracking-wider text-saafin-primary-text
-                  transition-all duration-500
-                  hover:text-saafin-muted
-                  ${scrolled ? "text-[10px]" : "text-xs"}
-                `}
+                className="flex items-center gap-3 text-sm font-medium tracking-wider text-saafin-primary-text hover:text-saafin-muted transition-colors"
               >
-                <action.icon className={`transition-all duration-500 ${scrolled ? "h-3 w-3" : "h-4 w-4"}`} />
-                <span className={scrolled ? "hidden lg:inline" : ""}>{action.label}</span>
+                <action.icon className="h-5 w-5" />
+                {action.label}
               </button>
             ))}
           </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </>
   );
 }
 

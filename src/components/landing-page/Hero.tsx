@@ -1,14 +1,33 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+
+const DESKTOP_IMAGE =
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136";
+const MOBILE_IMAGE =
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-05_16-58-11-818.jpg.jpeg";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile;
+}
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -56,9 +75,10 @@ export default function Hero() {
         <Image
           priority
           fill
-          src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg"
+          src={isMobile ? MOBILE_IMAGE : DESKTOP_IMAGE}
           alt="SAAFIN Product"
           className="h-full w-full object-cover"
+          sizes="100vw"
         />
       </div>
 
@@ -105,7 +125,7 @@ export default function Hero() {
             {/* Right — Collection Info */}
             <div
               ref={subRef}
-              className="text-center sm:text-right backdrop-blur-[5px] p-2 rounded-2xl order-3"
+              className="text-center max-[720px]:hidden sm:text-right backdrop-blur-[5px] p-2 rounded-2xl order-3"
             >
               <p className="text-[10px] sm:text-xs tracking-widest text-saafin-dark-text underline underline-offset-4">
                 NEW COLLECTION 26
