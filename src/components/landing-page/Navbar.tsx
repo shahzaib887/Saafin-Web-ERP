@@ -50,7 +50,6 @@ export default function Navbar() {
     return () => ctx.revert();
   }, []);
 
-  // Text color classes based on scroll state
   const textClass = scrolled
     ? "text-saafin-dark-text"
     : "text-saafin-primary-text";
@@ -67,14 +66,13 @@ export default function Navbar() {
           transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${
             scrolled
-              ? "bg-saafin-dark-bg/95 backdrop-blur-md shadow-saafin-sm h-14"
+              ? "bg-saafin-dark-bg/95 backdrop-blur-md shadow-saafin-sm h-10"
               : "bg-transparent h-20 sm:h-24 md:h-20"
           }
         `}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 h-full">
           <div className="flex h-full items-center justify-between relative">
-            {/* Desktop Left */}
             <div className="hidden md:flex items-center gap-10">
               {navLinks.map((link) => (
                 <a
@@ -91,8 +89,13 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Mobile Left */}
-            <div className="flex md:hidden flex-col items-start gap-0">
+            <div
+              className={`
+                flex md:hidden flex-col items-start gap-0
+                transition-all duration-500
+                ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}
+              `}
+            >
               {mobileLeftLinks.map((link) => (
                 <a
                   key={link.label}
@@ -108,7 +111,6 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Logo */}
             <a
               href="/"
               className={`
@@ -121,7 +123,6 @@ export default function Navbar() {
               SAAFIN
             </a>
 
-            {/* Desktop Right */}
             <div className="hidden md:flex items-center gap-8">
               {navActions.map((action) => (
                 <button
@@ -145,8 +146,13 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Mobile Right */}
-            <div className="flex md:hidden flex-col items-end gap-0">
+            <div
+              className={`
+                flex md:hidden flex-col items-end gap-0
+                transition-all duration-500
+                ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}
+              `}
+            >
               {mobileRightLinks.map((link) => (
                 <a
                   key={link.label}
@@ -165,7 +171,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Overlay – always dark with white text (as you had before) */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-saafin-dark-bg/98 backdrop-blur-lg pt-20">
           <div className="flex flex-col items-center gap-8 py-12">

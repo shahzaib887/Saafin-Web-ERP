@@ -33,7 +33,6 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-
       tl.from(imgRef.current, {
         scale: 1.15,
         opacity: 0,
@@ -68,7 +67,6 @@ export default function Hero() {
       ref={heroRef}
       className="relative min-h-screen w-full overflow-hidden bg-[#DEDEDE]"
     >
-      {/* Background Image Layer */}
       <div
         ref={imgRef}
         className="absolute inset-0 flex items-center justify-center"
@@ -83,15 +81,11 @@ export default function Hero() {
         />
       </div>
 
-      {/* Top Nav Area (spacing only — actual Navbar separate) */}
       <div className="relative z-10 h-16 sm:h-20" />
 
-      {/* Main Content */}
       <div className="relative z-10 flex min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex-col justify-between px-4 sm:px-6 md:px-8 pb-6 sm:pb-8">
-        {/* Bottom Content Grid */}
         <div className="mt-auto">
           <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6 sm:gap-0 relative">
-            {/* Left — Tagline */}
             <div
               ref={subRef}
               className="max-w-[16rem] backdrop-blur-[5px] p-2 rounded-2xl text-center sm:text-left order-2 sm:order-1"
@@ -106,7 +100,6 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Center — Big Title */}
             <h1
               ref={titleRef}
               className="
@@ -123,7 +116,6 @@ export default function Hero() {
               SAAFIN
             </h1>
 
-            {/* Right — Collection Info */}
             <div
               ref={subRef}
               className="text-center max-[720px]:hidden sm:text-right backdrop-blur-[5px] p-2 rounded-2xl order-3"
@@ -139,8 +131,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Subtle gradient overlay at bottom for text readability */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 sm:h-68 bg-gradient-to-t from-saafin-dark-bg/99 to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-148 sm:h-128 bg-gradient-to-t from-saafin-dark-bg to-transparent" />
     </section>
   );
 }

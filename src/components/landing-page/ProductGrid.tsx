@@ -15,7 +15,7 @@ const products = [
     name: "Icon Comfort beanie",
     price: "$40",
     image:
-      "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_ouxei1ouxei1ouxe.jpg",
+      "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_eejvh0eejvh0eejv.jpg?updatedAt=1788452014242",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const products = [
     name: "Icon hoodie",
     price: "$65",
     image:
-      "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_2wehzb2wehzb2weh%20(1).jpg",
+      "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_4gt55n4gt55n4gt5.jpg?updatedAt=1788449991119",
   },
   {
     id: 3,
@@ -67,7 +67,6 @@ export default function ProductGrid() {
       className="w-full bg-saafin-dark-bg py-16 px-6 md:py-20 md:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Header */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-saafin-dark-text">
             Apparel
@@ -87,14 +86,12 @@ export default function ProductGrid() {
           </div>
         </div>
 
-        {/* Product Grid */}
         <div
           ref={cardsRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
         >
           {products.map((product) => (
             <div key={product.id} className="product-card group cursor-pointer">
-              {/* Card Top */}
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-medium tracking-wider text-saafin-dark-muted">
                   {product.category}
@@ -104,18 +101,16 @@ export default function ProductGrid() {
                 </span>
               </div>
 
-              {/* Image Container */}
               <div className="relative aspect-square overflow-hidden bg-saafin-dark-surface">
                 <Image
                   src={product.image}
                   fill
                   alt={product.name}
-                  className="h-full w-full object-cover object-[50%_20%] transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="h-full w-full object-cover object-[50%_30%] transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
 
-              {/* Product Name */}
               <p className="mt-3 text-sm md:text-base font-medium text-saafin-dark-text">
                 {product.name}
               </p>
