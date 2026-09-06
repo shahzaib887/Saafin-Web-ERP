@@ -64,23 +64,23 @@ export default function ProductGrid() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-saafin-primary-bg py-24 px-8"
+      className="w-full bg-saafin-dark-bg py-16 px-6 md:py-20 md:px-8"
     >
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-saafin-primary-text">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-saafin-dark-text">
             Apparel
           </h2>
-          <div className="flex items-center gap-6">
-            <span className="text-sm font-medium tracking-wider text-saafin-primary-text">
+          <div className="flex items-center gap-5">
+            <span className="text-xs md:text-sm font-medium tracking-wider text-saafin-dark-text">
               VIEW ALL
             </span>
-            <div className="flex items-center gap-3">
-              <button className="flex h-10 w-10 items-center justify-center rounded-full border border-saafin-border text-saafin-primary-text transition-colors hover:bg-saafin-surface">
+            <div className="flex items-center gap-2">
+              <button className="flex h-9 w-9 items-center justify-center rounded-full border border-saafin-dark-border text-saafin-dark-text transition-colors hover:bg-saafin-dark-surface">
                 <ArrowLeftIcon className="h-4 w-4" />
               </button>
-              <button className="flex h-10 w-10 items-center justify-center rounded-full border border-saafin-border text-saafin-primary-text transition-colors hover:bg-saafin-surface">
+              <button className="flex h-9 w-9 items-center justify-center rounded-full border border-saafin-dark-border text-saafin-dark-text transition-colors hover:bg-saafin-dark-surface">
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
             </div>
@@ -88,32 +88,35 @@ export default function ProductGrid() {
         </div>
 
         {/* Product Grid */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          ref={cardsRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
+        >
           {products.map((product) => (
             <div key={product.id} className="product-card group cursor-pointer">
               {/* Card Top */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-medium tracking-wider text-saafin-muted">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium tracking-wider text-saafin-dark-muted">
                   {product.category}
                 </span>
-                <span className="text-sm font-medium text-saafin-primary-text">
+                <span className="text-sm font-medium text-saafin-dark-text">
                   {product.price}
                 </span>
               </div>
 
               {/* Image Container */}
-              <div className="relative aspect-square overflow-hidden bg-saafin-surface">
+              <div className="relative aspect-square overflow-hidden bg-saafin-dark-surface">
                 <Image
                   src={product.image}
                   fill
                   alt={product.name}
-                  className="h-screen w-full object-cover object-[50%_20%] transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="h-full w-full object-cover object-[50%_20%] transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
 
               {/* Product Name */}
-              <p className="mt-4 text-base font-medium text-saafin-primary-text">
+              <p className="mt-3 text-sm md:text-base font-medium text-saafin-dark-text">
                 {product.name}
               </p>
             </div>

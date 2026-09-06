@@ -60,35 +60,34 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full overflow-hidden bg-saafin-primary-bg"
+      className="relative w-full overflow-hidden bg-saafin-dark-bg"
     >
       {/* Main Content */}
       <div className="mx-auto max-w-5xl px-8 pt-32 pb-16 text-center">
         {/* Headline */}
         <div ref={headlineRef}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight">
-            <span className="text-saafin-muted">
+            <span className="text-saafin-dark-muted">
               Work seamlessly with a creative
               <br />
               team that&apos;s built to match your pace
-              
               and{" "}
             </span>
-            <span className="text-saafin-primary-text">
+            <span className="text-saafin-dark-text">
               exceed your expectations.
             </span>
           </h2>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button — inverted for dark background */}
         <div ref={ctaRef} className="mt-14 flex justify-center">
           <a
             href="/contact"
             className="
               group inline-flex items-center gap-4
-              rounded-full bg-saafin-primary-text px-6 py-3
+              rounded-full bg-saafin-dark-text px-6 py-3
               transition-all duration-300
-              hover:bg-saafin-secondary-text
+              hover:bg-saafin-dark-surface
             "
           >
             {/* Avatar */}
@@ -96,18 +95,17 @@ export default function Footer() {
               <img
                 src="https://scontent.cdninstagram.com/v/t51.82787-19/753206049_18332924344281192_6079860178002676486_n.jpg?_nc_cat=105&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44OTYuQzMifQ%3D%3D&_nc_ohc=uMYNlHwrlJ0Q7kNvwEGxDxI&_nc_oc=Ado_3lIiyVdcvq8yRfW7vhq9wCPDboP8J1vEbdQhnnpc9YvMxaCc8c7MurHBYgVUyEQ&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=CMWa7Mm8IGjdA3dK427WaQ&_nc_ss=7baaf&oh=00_AQLAUZBkYd3TnS9ndbUNbb6cSdox8ya4DzuzTrlUXJ2_xw&oe=6A9F7605"
                 alt="Team member"
-                
                 className="object-cover"
                 sizes="40px"
               />
             </div>
             {/* Text */}
             <div className="text-left">
-              <p className="text-sm font-medium text-white flex items-center gap-2">
+              <p className="text-sm font-medium text-saafin-primary-text flex items-center gap-2">
                 Book a Call
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </p>
-              <p className="text-xs text-white/60">
+              <p className="text-xs text-saafin-primary-text/60">
                 Let&apos;s talk about your project
               </p>
             </div>
@@ -125,7 +123,7 @@ export default function Footer() {
             className="
               text-[clamp(5rem,18vw,14rem)] font-heading
               leading-none tracking-tighter
-              text-saafin-primary-text
+              text-saafin-dark-text
               select-none text-center
             "
             style={{
@@ -141,7 +139,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="mx-auto max-w-7xl px-8 py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-saafin-muted">
+          <p className="text-xs text-saafin-dark-muted">
             &copy;2026 SAAFIN. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -149,7 +147,7 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-xs text-saafin-muted transition-colors duration-200 hover:text-saafin-primary-text"
+                className="text-xs text-saafin-dark-muted transition-colors duration-200 hover:text-saafin-dark-text"
               >
                 {link.label}
               </a>
