@@ -1,24 +1,24 @@
 const products = [
 	{
 		id: 1,
-		category: "CLASSICS",
-		name: "Icon Comfort beanie",
-		price: "$40",
-		material: "100% merino wool",
-		care: "Hand wash cold",
-		stock: "In stock, ships in 2 days",
+		category: "EVERYDAY",
+		name: "Saafin Pure 500 ml",
+		price: "From $8",
+		material: "Natural mineral water",
+		care: "Store cool and dry",
+		stock: "Available in packs",
 		rating: 5,
 		image:
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_eejvh0eejvh0eejv.jpg?updatedAt=1788452014242",
 	},
 	{
 		id: 2,
-		category: "CLASSICS",
-		name: "Icon hoodie",
-		price: "$65",
-		material: "Heavyweight cotton fleece",
-		care: "Machine wash cold",
-		stock: "In stock, ships in 2 days",
+		category: "FAMILY",
+		name: "Saafin Family 1.5 L",
+		price: "From $12",
+		material: "Balanced mineral blend",
+		care: "Keep sealed until use",
+		stock: "Available in cases",
 		rating: 5,
 		image:
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_4gt55n4gt55n4gt5.jpg?updatedAt=1788449991119",
@@ -50,10 +50,10 @@ export default function FeaturedProducts() {
 			<div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
 				<div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
 					<h2 className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-6xl">
-						Featured Products
+						Saafin essentials
 					</h2>
 					<p className="max-w-sm text-sm leading-relaxed text-saafin-dark-muted">
-						Discover our classic pieces, thoughtfully made and built to last.
+						Clean, refreshing mineral water in sizes made for your routine.
 					</p>
 				</div>
 			</div>
@@ -109,7 +109,7 @@ export default function FeaturedProducts() {
 							</div>
 
 							<button className="mt-8 inline-flex w-fit items-center gap-3 rounded-saafin-full bg-saafin-dark-surface px-6 py-3 text-sm font-medium text-saafin-dark-text transition-colors hover:bg-saafin-dark-border">
-								Explore Product
+															Explore Bottle
 								<svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
 									<path d="M6 2h12v20l-6-4.2L6 22V2z" />
 								</svg>

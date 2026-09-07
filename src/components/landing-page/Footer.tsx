@@ -10,13 +10,12 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-8 pt-32 pb-16 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight">
           <span className="text-saafin-dark-muted">
-            Work seamlessly with a creative
+            Stay refreshed with water
             <br />
-            team that&apos;s built to match your pace
-            and{" "}
+            you can trust every day{" "}
           </span>
           <span className="text-saafin-dark-text">
-            exceed your expectations.
+            from Saafin.
           </span>
         </h2>
 
@@ -40,11 +39,11 @@ export default function Footer() {
             </div>
             <div className="text-left">
               <p className="text-[0.83rem] font-medium text-saafin-primary-text flex items-center gap-2">
-                Book a Call
+                Find Saafin
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </p>
               <p className="text-[0.71rem] text-saafin-primary-text/60">
-                Let&apos;s talk about your project
+                Bring better hydration home
               </p>
             </div>
           </a>

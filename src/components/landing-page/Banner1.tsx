@@ -4,51 +4,51 @@ import { useState } from "react";
 
 const ACCORDION_ITEMS = [
   {
-    key: "stay",
-    label: "Stay",
+    key: "source",
+    label: "Source",
     description:
-      "Handpicked boutique stays that match the mood of every retreat, from mountain lodges to coastal villas.",
+      "Carefully selected water with a naturally clean taste and balanced minerals.",
   },
   {
-    key: "transfers",
-    label: "Transfers",
+    key: "quality",
+    label: "Quality",
     description:
-      "Airport pickups, coach transfers, and private cars arranged so every leg of the trip is taken care of.",
+      "Quality checks at every stage help keep every Saafin bottle fresh and dependable.",
   },
   {
-    key: "extras",
-    label: "Extras",
+    key: "packaging",
+    label: "Packaging",
     description:
-      "Combine Retreat into one seamless checkout. Instant confirmations where available, or concierge support for bespoke itineraries.",
+      "Thoughtfully sized bottles that are easy to carry, share, and enjoy throughout the day.",
   },
 ];
 
 const STEPS = [
-  { step: "01", title: "Choose Retreat" },
-  { step: "02", title: "Match Boutique Stay" },
-  { step: "03", title: "Add Transfers & Extras" },
-  { step: "04", title: "Secure Payment" },
+  { step: "01", title: "Select the source" },
+  { step: "02", title: "Check for purity" },
+  { step: "03", title: "Bottle with care" },
+  { step: "04", title: "Seal the freshness" },
 ];
 
 const IMAGE =
   "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_hjc7quhjc7quhjc7.jpg";
 
 export default function Combine() {
-  const [active, setActive] = useState("extras");
+  const [active, setActive] = useState("packaging");
   const activeItem = ACCORDION_ITEMS.find((item) => item.key === active)!;
 
   return (
     <section className="dark relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-saafin-dark-bg text-saafin-dark-text">
       <img
         src={IMAGE}
-        alt="Combine Retreat"
+        alt="Saafin mineral water bottle"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-saafin-dark-bg via-saafin-dark-bg/10 to-transparent" />
 
       <div className="relative z-10 px-6 pt-20 md:px-10">
         <h2 className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-6xl">
-          Combine Retreat
+          What makes Saafin different
         </h2>
 
         <div className="mt-8 flex flex-col gap-2">

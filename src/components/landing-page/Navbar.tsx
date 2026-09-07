@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Retreats", href: "#retreats" },
-  { label: "Coaches", href: "#coaches" },
-  { label: "Contacts", href: "#contacts" },
+  { label: "Products", href: "#products" },
+  { label: "Our Water", href: "#about" },
+  { label: "Process", href: "#process" },
 ];
 
 export default function Navbar() {
@@ -42,10 +42,10 @@ export default function Navbar() {
 
         <div className="flex items-center border-l border-white/15 bg-[#1c7a92]/30 px-8 md:px-12">
           <Link
-            href="#explore"
+            href="#products"
             className="text-sm font-medium text-white transition-colors hover:text-[#F6C083]"
           >
-            Explore
+            Shop Water
           </Link>
         </div>
       </div>

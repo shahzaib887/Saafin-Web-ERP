@@ -1,27 +1,27 @@
 const CARDS = [
   {
-    label: "Introvert Retreats",
-    stat: "78+ Countries",
+    label: "Saafin Pure",
+    stat: "500 ml",
     image:
       "https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    label: "Yoga Retreats",
-    stat: "89+ Countries",
+    label: "Saafin Family",
+    stat: "1.5 Litre",
     image:
       "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    label: "Detox",
-    stat: "56+ Countries",
+    label: "Saafin Refresh",
+    stat: "330 ml",
     image:
       "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
-export default function Retreats() {
+export default function ProductGrid() {
   return (
-    <section className="dark bg-saafin-dark-bg text-saafin-dark-text">
+    <section id="products" className="dark bg-saafin-dark-bg text-saafin-dark-text">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
         <div className="flex items-center gap-2 text-saafin-dark-muted">
           <svg
@@ -36,13 +36,13 @@ export default function Retreats() {
             <line x1="4" y1="7" x2="20" y2="17" />
             <line x1="20" y1="7" x2="4" y2="17" />
           </svg>
-          <span className="text-sm font-medium">Retreats</span>
+          <span className="text-sm font-medium">Our Range</span>
         </div>
 
         <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-saafin-dark-text md:text-6xl">
-          We&apos;ve vetted retreats in more than 100 countries
+          Pure hydration, made for every kind of day
           <br />
-          See for yourself
+          Find your Saafin
         </h2>
       </div>
 

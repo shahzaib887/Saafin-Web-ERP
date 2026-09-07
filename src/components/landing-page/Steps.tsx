@@ -1,8 +1,8 @@
 const STEPS = [
   {
     number: "01",
-    title: "Tell us your goals",
-    description: "Trusted by travelers looking for more than ordinary vacations.",
+    title: "Sourced with care",
+    description: "We select mineral water for its clean taste and natural balance.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 21V10l6-3 6 3v11" />
@@ -14,8 +14,8 @@ const STEPS = [
   },
   {
     number: "02",
-    title: "Get curated matches",
-    description: "We recommend retreats and stays that fit.",
+    title: "Filtered for purity",
+    description: "Every bottle passes through careful quality checks before filling.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l1.3-1.3a3 3 0 1 1-4.3-4.3l-1.3 1.3a1 1 0 0 0 0 1.4Z" />
@@ -27,8 +27,8 @@ const STEPS = [
   },
   {
     number: "03",
-    title: "Customize your package",
-    description: "Add transfers, spa, and extras in one checkout.",
+    title: "Sealed for freshness",
+    description: "Our bottles are sealed to protect every refreshing sip.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="16" rx="2" />
@@ -42,8 +42,8 @@ const STEPS = [
   },
   {
     number: "04",
-    title: "Travel & track progress",
-    description: "Use VITA Journal to reflect and rebook.",
+    title: "Ready for your day",
+    description: "Take Saafin to work, school, the gym, or wherever life goes.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 2 11 13" />
@@ -55,15 +55,15 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="dark bg-saafin-dark-bg text-saafin-dark-text">
+    <section id="process" className="dark bg-saafin-dark-bg text-saafin-dark-text">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:px-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
           <h2 className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-6xl">
-            How Vita Works
+            From source to sip
           </h2>
           <p className="max-w-xs text-sm leading-relaxed text-saafin-dark-muted">
-            Browse certified experts with verified credentials and guest
-            testimonials.
+            A simple process built around purity, quality, and a great-tasting
+            bottle of water.
           </p>
         </div>
 

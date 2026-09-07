@@ -1,14 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 
 const HERO_IMAGE =
   "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_cq81f2cq81f2cq81.jpg";
 
 export default function Hero() {
-  const [loaded, setLoaded] = useState(false);
-
   return (
     <section className="relative flex h-screen min-h-[720px] w-full items-center justify-center overflow-hidden bg-[#0A1B1F]">
       <Image
@@ -17,18 +14,13 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        onLoad={() => setLoaded(true)}
-        className={`object-cover transition-opacity duration-[1400ms] ease-out ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}
+        className="object-cover"
       />
 
       {/* blurred foreground depth strip, matches source */}
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-x-0 bottom-0 h-[18%] transition-opacity duration-[1400ms] ease-out ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[18%]"
         style={{
           backgroundImage: `url(${HERO_IMAGE})`,
           backgroundSize: "cover",
@@ -46,23 +38,20 @@ export default function Hero() {
 
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-16 text-left md:px-16 md:pb-20">
         <h1 className="font-[family-name:var(--font-heading)] text-[clamp(3.5rem,13vw,10rem)] font-extrabold leading-[0.9] tracking-tight text-white">
-          Travel
+          Saafin
         </h1>
 
-        <p className="mt-6 max-w-xl text-balance text-lg font-medium text-white/95 md:text-xl">          With purpose. Book retreats, active tours, and boutique stays in
-          one place.
+        <p className="mt-6 max-w-xl text-balance text-lg font-medium text-white/95 md:text-xl">
+          Pure mineral water for every moment, carefully bottled to keep you
+          refreshed from the first sip to the last.
         </p>
 
         <a
-          href="#retreats"
+          href="#products"
           className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-semibold text-[#0A1B1F] transition-colors duration-300 hover:bg-[#F6C083]"
         >
-          Explore Retreats
-          <svg
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-3.5 w-3.5"
-          >
+          Explore Saafin
+          <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
             <path d="M6 2h12v20l-6-4.2L6 22V2z" />
           </svg>
         </a>
