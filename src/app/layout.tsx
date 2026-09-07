@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
+import PreLoader from "@/components/PreLoader";
+import SmoothScroll from "@/components/SmoothScroll";
+import Navbar from "@/components/landing-page/Navbar";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,7 +22,11 @@ export default function RootLayout({
 }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <PreLoader />
+        <Navbar />
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

@@ -1,117 +1,100 @@
 "use client";
 
-import { useRef } from "react";
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+const ACCORDION_ITEMS = [
+  {
+    key: "stay",
+    label: "Stay",
+    description:
+      "Handpicked boutique stays that match the mood of every retreat, from mountain lodges to coastal villas.",
+  },
+  {
+    key: "transfers",
+    label: "Transfers",
+    description:
+      "Airport pickups, coach transfers, and private cars arranged so every leg of the trip is taken care of.",
+  },
+  {
+    key: "extras",
+    label: "Extras",
+    description:
+      "Combine Retreat into one seamless checkout. Instant confirmations where available, or concierge support for bespoke itineraries.",
+  },
+];
 
-export default function Banner() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const rightTextRef = useRef<HTMLDivElement>(null);
+const STEPS = [
+  { step: "01", title: "Choose Retreat" },
+  { step: "02", title: "Match Boutique Stay" },
+  { step: "03", title: "Add Transfers & Extras" },
+  { step: "04", title: "Secure Payment" },
+];
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
+const IMAGE =
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_hjc7quhjc7quhjc7.jpg";
 
-      tl.from(titleRef.current, {
-        y: 100,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
-      })
-        .from(
-          cardRef.current,
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.6"
-        )
-        .from(
-          rightTextRef.current,
-          {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.5"
-        );
-    },
-    { scope: sectionRef }
-  );
+export default function Combine() {
+  const [active, setActive] = useState("extras");
+  const activeItem = ACCORDION_ITEMS.find((item) => item.key === active)!;
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full overflow-hidden bg-black "
-      style={{
-        backgroundImage:
-          'url("https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_96cjiz96cjiz96cj.jpg")',
-        backgroundSize: "cover",
-        backgroundColor: "#000000",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-68 bg-gradient-to-b from-saafin-dark-bg/59 to-transparent" />
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-68 bg-gradient-to-t from-saafin-dark-bg/59 to-transparent" />
+    <section className="dark relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-saafin-dark-bg text-saafin-dark-text">
+      <img
+        src={IMAGE}
+        alt="Combine Retreat"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-saafin-dark-bg via-saafin-dark-bg/10 to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-8 py-20 min-h-[70vh] flex flex-col items-center justify-center">
-        <h2
-          ref={titleRef}
-          className="
-            text-[clamp(2.5rem,8vw,6rem)] font-bold
-            leading-[0.85] tracking-tighter
-            text-white text-center
-          "
-        >
-          PURE WATER
-          <br />
-          PURE LIFE
+      <div className="relative z-10 px-6 pt-20 md:px-10">
+        <h2 className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-6xl">
+          Combine Retreat
         </h2>
 
-        <div ref={cardRef} className="mt-12 flex flex-col items-center gap-3">
-          <div className="flex items-center justify-between w-36">
-            <span className="text-xs font-medium tracking-wider text-white">
-              CLASSICS
-            </span>
-            <span className="text-xs font-medium text-white">$35</span>
-          </div>
-          <div className="relative h-28 w-36 overflow-hidden bg-saafin-dark-surface">
-            <Image
-              src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_ouxei1ouxei1ouxe.jpg"
-              alt="Loading tee"
-              fill
-              className="object-cover object-[50%_20%]"
-              sizes="144px"
-            />
-          </div>
-          <p className="text-sm font-medium text-white">Loading tee</p>
+        <div className="mt-8 flex flex-col gap-2">
+          {ACCORDION_ITEMS.map((item) => (
+            <button
+              key={item.key}
+              onClick={() => setActive(item.key)}
+              className={`flex w-fit items-center gap-2 text-2xl font-semibold transition-colors md:text-3xl ${
+                active === item.key
+                  ? "text-saafin-dark-text"
+                  : "text-saafin-dark-text/100 hover:text-saafin-dark-text/70"
+              }`}
+            >
+              <span className="text-xl">+</span>
+              {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative z-10 grid grid-cols-1 border-t border-white/15 bg-saafin-dark-bg/20 backdrop-blur-sm md:grid-cols-[1.1fr_1fr_1fr_1fr_1fr]">
+        <div className="border-b border-white/15 px-6 py-8 md:border-b-0 md:border-r md:px-10">
+          <p className="max-w-xs text-sm leading-relaxed text-saafin-dark-text/80">
+            {activeItem.description}
+          </p>
         </div>
 
-        <div ref={rightTextRef} className="mt-8 text-center">
-          <p className="text-xs tracking-wider text-white uppercase">
-            Limited Edition
-          </p>
-          <p className="mt-1 text-xs tracking-wider text-white">
-            2026 Collection
-          </p>
-        </div>
+        {STEPS.map((s, i) => (
+          <div
+            key={s.step}
+            className={`px-6 py-8 md:px-10 ${
+              i !== STEPS.length - 1 ? "border-b border-white/15 md:border-b-0 md:border-r" : ""
+            }`}
+          >
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl font-bold tracking-tight text-saafin-dark-text">
+                {s.step}
+              </span>
+              <span className="text-xs text-saafin-dark-muted">Step</span>
+            </div>
+            <p className="mt-6 text-sm font-medium text-saafin-dark-text">
+              {s.title}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
-} 
+}

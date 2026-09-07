@@ -1,92 +1,64 @@
-"use client";
+const STATS = [
+  { value: "100+", label: "Total countries travelled" },
+  { value: "1472+", label: "Total retreats attended" },
+];
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import Image from "next/image";
-
-gsap.registerPlugin(ScrollTrigger);
+const TRUSTED_BY = ["yoga", "lonely planet", "abc news"];
 
 export default function About() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      if (!textRef.current || !imageRef.current) return;
-
-      gsap.from(textRef.current, {
-        x: -60,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          toggleActions: "play none none none",
-        },
-      });
-
-      gsap.from(imageRef.current, {
-        x: 60,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          toggleActions: "play none none none",
-        },
-      });
-    },
-    { scope: sectionRef },
-  );
-
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-saafin-dark-bg py-32 px-8 rounded-b-2xl overflow-hidden"
-    >
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left — Text Content */}
-          <div ref={textRef}>
-            <h2 className="mt-6 text-4xl md:text-5xl font-bold leading-tight tracking-tight text-saafin-dark-text">
-              Crafted for those
-              <br />
-              who demand
-              <br />
-              <span className="text-saafin-dark-muted">more.</span>
-            </h2>
+    <section className="dark bg-saafin-dark-bg text-saafin-dark-text">
+      <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
+        <h2 className="max-w-2xl text-4xl font-bold leading-tight tracking-tight text-saafin-dark-text md:text-6xl">
+          Not just trips experiences that nurture body and soul
+        </h2>
 
-            <p className="mt-8 text-base leading-relaxed text-saafin-dark-text max-w-md">
-              We believe in the power of minimal design. Every stitch, every
-              fabric, every detail is intentional. SAAFIN is not just clothing —
-              it is a statement of refined taste and uncompromising quality.
-            </p>
-
-            <p className="mt-4 text-base leading-relaxed text-saafin-dark-text max-w-md">
-              Born from a passion for timeless aesthetics, our collections merge
-              contemporary silhouettes with enduring craftsmanship. Designed in
-              house, made to last.
-            </p>
+        <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-saafin-lg md:aspect-auto">
+            <img
+              src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=1200&auto=format&fit=crop"
+              alt="Vita Travels"
+              className="h-full w-full object-cover"
+            />
           </div>
 
-          {/* Right — Image */}
-          <div ref={imageRef} className="relative">
-            <div className="aspect-[4/5] overflow-hidden bg-saafin-dark-surface">
-              <Image
-                fill
-                src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_2wehzb2wehzb2weh%20(1).jpg"
-                alt="SAAFIN About"
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
+          <div className="flex flex-col">
+            <p className="max-w-md text-lg leading-relaxed text-saafin-dark-text/90 md:text-xl">
+              Vita Travel is a premium wellness travel marketplace that
+              blends the ease of booking with the feel of an editorial
+              magazine. Discover curated programs, match them with
+              exceptional stays, and book seamlessly.
+            </p>
+
+            <div className="mt-16 grid grid-cols-2 gap-8">
+              {STATS.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-5xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-3 text-sm text-saafin-dark-muted">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-6 -left-6 h-24 w-24 border border-saafin-dark-border" />
+
+            <div className="mt-auto pt-16">
+              <p className="max-w-xs text-sm text-saafin-dark-muted">
+                Trusted by travelers looking for more than ordinary
+                vacations.
+              </p>
+              <div className="mt-5 flex items-center gap-8">
+                {TRUSTED_BY.map((brand) => (
+                  <span
+                    key={brand}
+                    className="text-sm font-semibold uppercase tracking-wider text-saafin-dark-muted"
+                  >
+                    {brand}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

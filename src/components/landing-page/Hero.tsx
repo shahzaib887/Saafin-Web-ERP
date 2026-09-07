@@ -1,137 +1,72 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import Image from "next/image";
+import { useState } from "react";
 
-const DESKTOP_IMAGE =
-  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136";
-const MOBILE_IMAGE =
-  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-05_16-58-11-818.jpg.jpeg";
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  return isMobile;
-}
+const HERO_IMAGE =
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_cq81f2cq81f2cq81.jpg";
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-      tl.from(imgRef.current, {
-        scale: 1.15,
-        opacity: 0,
-        duration: 1.4,
-      })
-        .from(
-          titleRef.current,
-          {
-            y: 80,
-            opacity: 0,
-            duration: 1.2,
-          },
-          "-=0.8",
-        )
-        .from(
-          subRef.current?.children || [],
-          {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-          },
-          "-=0.6",
-        );
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
+  const [loaded, setLoaded] = useState(false);
 
   return (
-    <section
-      ref={heroRef}
-      className="relative min-h-screen w-full overflow-hidden bg-[#DEDEDE]"
-    >
+    <section className="relative flex h-screen min-h-[720px] w-full items-center justify-center overflow-hidden bg-[#0A1B1F]">
+      <Image
+        src={HERO_IMAGE}
+        alt="Saafin"
+        fill
+        priority
+        sizes="100vw"
+        onLoad={() => setLoaded(true)}
+        className={`object-cover transition-opacity duration-[1400ms] ease-out ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      {/* blurred foreground depth strip, matches source */}
       <div
-        ref={imgRef}
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        <Image
-          priority
-          fill
-          src={isMobile ? MOBILE_IMAGE : DESKTOP_IMAGE}
-          alt="SAAFIN Product"
-          className="h-full w-full object-cover"
-          sizes="100vw"
-        />
+        aria-hidden
+        className={`pointer-events-none absolute inset-x-0 bottom-0 h-[18%] transition-opacity duration-[1400ms] ease-out ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          backgroundImage: `url(${HERO_IMAGE})`,
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+          filter: "blur(6px)",
+          maskImage: "linear-gradient(to top, black, transparent)",
+          WebkitMaskImage: "linear-gradient(to top, black, transparent)",
+        }}
+      />
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/10"
+      />
+
+      <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-16 text-left md:px-16 md:pb-20">
+        <h1 className="font-[family-name:var(--font-heading)] text-[clamp(3.5rem,13vw,10rem)] font-extrabold leading-[0.9] tracking-tight text-white">
+          Travel
+        </h1>
+
+        <p className="mt-6 max-w-xl text-balance text-lg font-medium text-white/95 md:text-xl">          With purpose. Book retreats, active tours, and boutique stays in
+          one place.
+        </p>
+
+        <a
+          href="#retreats"
+          className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-semibold text-[#0A1B1F] transition-colors duration-300 hover:bg-[#F6C083]"
+        >
+          Explore Retreats
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-3.5 w-3.5"
+          >
+            <path d="M6 2h12v20l-6-4.2L6 22V2z" />
+          </svg>
+        </a>
       </div>
-
-      <div className="relative z-10 h-16 sm:h-20" />
-
-      <div className="relative z-10 flex min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex-col justify-between px-4 sm:px-6 md:px-8 pb-6 sm:pb-8">
-        <div className="mt-auto">
-          <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6 sm:gap-0 relative">
-            <div
-              ref={subRef}
-              className="max-w-[16rem] backdrop-blur-[5px] p-2 rounded-2xl text-center sm:text-left order-2 sm:order-1"
-            >
-              <p className="text-xs sm:text-sm text-saafin-dark-text">
-                A sophisticated blend of elegant
-                <br />
-                design and daily comfort.
-              </p>
-              <p className="mt-3 sm:mt-4 text-[10px] sm:text-xs tracking-widest text-saafin-dark-text">
-                Scroll Down
-              </p>
-            </div>
-
-            <h1
-              ref={titleRef}
-              className="
-                text-[clamp(3rem,14vw,10rem)]
-                sm:text-[clamp(4rem,12vw,10rem)]
-                leading-none tracking-tighter
-                text-saafin-dark-text
-                select-none
-                order-1 sm:order-2
-                sm:absolute sm:left-1/2 sm:-translate-x-1/2
-              "
-              style={{ bottom: "2rem" }}
-            >
-              SAAFIN
-            </h1>
-
-            <div
-              ref={subRef}
-              className="text-center max-[720px]:hidden sm:text-right backdrop-blur-[5px] p-2 rounded-2xl order-3"
-            >
-              <p className="text-[10px] sm:text-xs tracking-widest text-saafin-dark-text underline underline-offset-4">
-                NEW COLLECTION 26
-              </p>
-              <p className="mt-1 sm:mt-2 text-[10px] sm:text-xs tracking-widest text-saafin-dark-text">
-                2026
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-148 sm:h-128 bg-gradient-to-t from-saafin-dark-bg to-transparent" />
     </section>
   );
 }

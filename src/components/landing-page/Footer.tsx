@@ -1,13 +1,3 @@
-"use client";
-
-import { useRef } from "react";
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const footerLinks = [
   { label: "Terms of Service", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
@@ -15,69 +5,22 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-  const footerRef = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-  const watermarkRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: footerRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    tl.from(headlineRef.current, {
-      y: 60,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    })
-      .from(
-        ctaRef.current,
-        {
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        },
-        "-=0.5"
-      )
-      .from(
-        watermarkRef.current,
-        {
-          y: 40,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-        },
-        "-=0.4"
-      );
-  }, { scope: footerRef });
-
   return (
-    <footer
-      ref={footerRef}
-      className="relative w-full overflow-hidden bg-saafin-dark-bg"
-    >
+    <footer className="relative w-full overflow-hidden bg-saafin-dark-bg">
       <div className="mx-auto max-w-5xl px-8 pt-32 pb-16 text-center">
-        <div ref={headlineRef}>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight">
-            <span className="text-saafin-dark-muted">
-              Work seamlessly with a creative
-              <br />
-              team that&apos;s built to match your pace
-              and{" "}
-            </span>
-            <span className="text-saafin-dark-text">
-              exceed your expectations.
-            </span>
-          </h2>
-        </div>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight">
+          <span className="text-saafin-dark-muted">
+            Work seamlessly with a creative
+            <br />
+            team that&apos;s built to match your pace
+            and{" "}
+          </span>
+          <span className="text-saafin-dark-text">
+            exceed your expectations.
+          </span>
+        </h2>
 
-        <div ref={ctaRef} className="mt-14 flex justify-center">
+        <div className="mt-14 flex justify-center">
           <a
             href="/contact"
             className="
@@ -108,10 +51,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div
-        ref={watermarkRef}
-        className="relative mx-auto max-w-7xl px-8"
-      >
+      <div className="relative mx-auto max-w-7xl px-8">
         <div className="overflow-hidden">
           <p
             className="
