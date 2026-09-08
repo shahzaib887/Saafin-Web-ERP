@@ -1,48 +1,18 @@
 const products = [
 	{
 		id: 1,
-		category: "EVERYDAY",
 		name: "Saafin Pure 500 ml",
-		price: "From $8",
-		material: "Natural mineral water",
-		care: "Store cool and dry",
-		stock: "Available in packs",
-		rating: 5,
+		bestFor: "Everyday • On the Go • Active Lifestyle",
 		image:
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_eejvh0eejvh0eejv.jpg?updatedAt=1788452014242",
 	},
 	{
-		id: 2,
 		category: "FAMILY",
-		name: "Saafin Family 1.5 L",
-		price: "From $12",
-		material: "Balanced mineral blend",
-		care: "Keep sealed until use",
-		stock: "Available in cases",
-		rating: 5,
+		bestFor: "Families • Home • Meals",
 		image:
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_4gt55n4gt55n4gt5.jpg?updatedAt=1788449991119",
 	},
 ];
-
-function StarRow({ rating }: { rating: number }) {
-	return (
-		<div className="flex items-center gap-0.5">
-			{Array.from({ length: 5 }).map((_, i) => (
-				<svg
-					key={i}
-					viewBox="0 0 20 20"
-					fill={i < rating ? "currentColor" : "none"}
-					stroke="currentColor"
-					strokeWidth={1.2}
-					className="h-3.5 w-3.5 text-[#F6C083]"
-				>
-					<path d="M10 1.5l2.6 5.4 5.9.7-4.3 4.1 1 5.9L10 14.8 4.8 17.6l1-5.9L1.5 7.6l5.9-.7L10 1.5z" />
-				</svg>
-			))}
-		</div>
-	);
-}
 
 export default function FeaturedProducts() {
 	return (
@@ -53,7 +23,7 @@ export default function FeaturedProducts() {
 						Saafin essentials
 					</h2>
 					<p className="max-w-sm text-sm leading-relaxed text-saafin-dark-muted">
-						Clean, refreshing mineral water in sizes made for your routine.
+						Clean, refreshing mineral water in sizes made for your everyday routine.
 					</p>
 				</div>
 			</div>
@@ -73,39 +43,16 @@ export default function FeaturedProducts() {
 								<h3 className="text-2xl font-semibold leading-snug text-saafin-dark-text md:text-3xl">
 									{product.name}
 								</h3>
-								<p className="mt-3 text-sm text-saafin-dark-muted">
-									from <span className="text-saafin-dark-text">{product.price}</span>
+								<p className="mt-3 max-w-sm text-sm leading-relaxed text-saafin-dark-muted">
+									{product.id === 1
+										? "Natural mineral water designed for everyday hydration. Convenient, refreshing, and easy to take with you."
+										: "Balanced mineral water made for sharing. Keep your family refreshed at home, around the table, or throughout the day."}
 								</p>
 							</div>
 
-							<div className="mt-10 space-y-3">
-								<div className="flex items-center justify-between">
-									<span className="text-sm text-saafin-dark-text">{product.material}</span>
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4 text-saafin-dark-muted">
-										<path d="M6 3v18M6 3a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3M6 9v6M18 21V3M18 21a3 3 0 0 0-3-3v0a3 3 0 0 0-3 3" />
-									</svg>
-								</div>
-
-								<div className="flex items-center justify-between">
-									<span className="text-sm text-saafin-dark-text">{product.care}</span>
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4 text-saafin-dark-muted">
-										<rect x="4" y="4" width="16" height="16" rx="2" />
-										<path d="M8 12h8" />
-									</svg>
-								</div>
-
-								<div className="flex items-center justify-between">
-									<span className="text-sm text-saafin-dark-text">{product.stock}</span>
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4 text-saafin-dark-muted">
-										<circle cx="12" cy="12" r="9" />
-										<path d="M12 7v5l3 3" />
-									</svg>
-								</div>
-
-								<div className="flex items-center justify-between pt-1">
-									<span className="text-xs tracking-widest text-saafin-dark-muted">{product.category}</span>
-									<StarRow rating={product.rating} />
-								</div>
+							<div className="mt-10">
+								<p className="text-xs uppercase tracking-widest text-saafin-dark-muted">Best for</p>
+								<p className="mt-2 text-sm text-saafin-dark-text">{product.bestFor}</p>
 							</div>
 
 							<button className="mt-8 inline-flex w-fit items-center gap-3 rounded-saafin-full bg-saafin-dark-surface px-6 py-3 text-sm font-medium text-saafin-dark-text transition-colors hover:bg-saafin-dark-border">

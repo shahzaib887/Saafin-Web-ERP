@@ -10,12 +10,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-8 pt-32 pb-16 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight">
           <span className="text-saafin-dark-muted">
-            Stay refreshed with water
-            <br />
-            you can trust every day{" "}
-          </span>
-          <span className="text-saafin-dark-text">
-            from Saafin.
+            Stay Refreshed with Saafin Premium Mineral Water
           </span>
         </h2>
 
@@ -43,7 +38,7 @@ export default function Footer() {
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </p>
               <p className="text-[0.71rem] text-saafin-primary-text/60">
-                Bring better hydration home
+                Pure hydration for every moment
               </p>
             </div>
           </a>

@@ -7,19 +7,19 @@ const ACCORDION_ITEMS = [
     key: "source",
     label: "Source",
     description:
-      "Carefully selected water with a naturally clean taste and balanced minerals.",
+      "Carefully selected water sources chosen for their natural quality.",
   },
   {
     key: "quality",
     label: "Quality",
     description:
-      "Quality checks at every stage help keep every Saafin bottle fresh and dependable.",
+      "Every bottle is handled with care and produced with a focus on freshness and quality.",
   },
   {
     key: "packaging",
     label: "Packaging",
     description:
-      "Thoughtfully sized bottles that are easy to carry, share, and enjoy throughout the day.",
+      "Thoughtfully designed packaging that makes Saafin easy to enjoy wherever life takes you.",
   },
 ];
 
@@ -48,8 +48,14 @@ export default function Combine() {
 
       <div className="relative z-10 px-6 pt-20 md:px-10">
         <h2 className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-6xl">
-          What makes Saafin different
+          What Makes Saafin Different
         </h2>
+
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-saafin-dark-text/80 md:text-lg">
+          Saafin brings together naturally refreshing mineral water, careful
+          quality standards, and thoughtful packaging to create a premium
+          hydration experience for everyday life.
+        </p>
 
         <div className="mt-8 flex flex-col gap-2">
           {ACCORDION_ITEMS.map((item) => (

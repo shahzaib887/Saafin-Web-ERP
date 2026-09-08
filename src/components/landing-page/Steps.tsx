@@ -2,7 +2,7 @@ const STEPS = [
   {
     number: "01",
     title: "Sourced with care",
-    description: "We select mineral water for its clean taste and natural balance.",
+    description: "We select mineral water sources with freshness and natural quality in mind.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 21V10l6-3 6 3v11" />
@@ -43,7 +43,7 @@ const STEPS = [
   {
     number: "04",
     title: "Ready for your day",
-    description: "Take Saafin to work, school, the gym, or wherever life goes.",
+    description: "Take Saafin with you wherever your day takes you — at home, at work, at the gym, or on the go.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 2 11 13" />

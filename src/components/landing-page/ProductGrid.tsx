@@ -7,7 +7,7 @@ const CARDS = [
   },
   {
     label: "Saafin Family",
-    stat: "1.5 Litre",
+    stat: "1.5 L",
     image:
       "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop",
   },
@@ -40,9 +40,7 @@ export default function ProductGrid() {
         </div>
 
         <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-saafin-dark-text md:text-6xl">
-          Pure hydration, made for every kind of day
-          <br />
-          Find your Saafin
+          Pure hydration, made for every kind of day. Find your Saafin.
         </h2>
       </div>
 
@@ -70,6 +68,15 @@ export default function ProductGrid() {
                 className="h-full w-full object-cover"
               />
             </div>
+
+            <p className="max-w-sm py-6 text-sm leading-relaxed text-saafin-dark-muted">
+              {card.label === "Saafin Pure" &&
+                "Clean, refreshing mineral water for everyday hydration. Perfect for staying refreshed wherever your day takes you."}
+              {card.label === "Saafin Family" &&
+                "Balanced mineral water for the whole family. A convenient choice for home, meals, and everyday hydration."}
+              {card.label === "Saafin Refresh" &&
+                "Refreshing mineral water made for moments when you need a light, convenient boost of hydration."}
+            </p>
           </div>
         ))}
       </div>

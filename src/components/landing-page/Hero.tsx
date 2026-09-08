@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 const HERO_IMAGE =
-  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_cq81f2cq81f2cq81.jpg";
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/ChatGPT%20Image%20Sep%208,%202026,%2006_37_58%20PM.png";
 
 export default function Hero() {
   return (
@@ -37,11 +37,11 @@ export default function Hero() {
       />
 
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-16 text-left md:px-16 md:pb-20">
-        <h1 className="font-[family-name:var(--font-heading)] text-[clamp(3.5rem,13vw,10rem)] font-extrabold leading-[0.9] tracking-tight text-white">
-          Saafin
+        <h1 className="max-w-3xl font-[family-name:var(--font-heading)] text-[clamp(2.5rem,8vw,6.5rem)] font-semibold leading-[0.95] tracking-tight text-white/90">
+          Pure Hydration. Meet Saafin.
         </h1>
 
-        <p className="mt-6 max-w-xl text-balance text-lg font-medium text-white/95 md:text-xl">
+        <p className="mt-4 max-w-lg text-balance text-base font-normal leading-relaxed text-white/75 md:text-lg">
           Pure mineral water for every moment, carefully bottled to keep you
           refreshed from the first sip to the last.
         </p>

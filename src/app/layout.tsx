@@ -12,8 +12,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Saafin",
-  description: "Saafin Mineral Water",
+  title: "Saafin | Premium Natural Mineral Water for Everyday Hydration",
+  description:
+    "Discover Saafin premium mineral water, carefully sourced and bottled for refreshing everyday hydration. Explore Saafin Pure, Family, and Refresh water.",
+  keywords: [
+    "premium mineral water",
+    "natural mineral water",
+    "bottled mineral water",
+    "pure drinking water",
+    "refreshing mineral water",
+    "family bottled water",
+    "everyday hydration",
+  ],
 };
 
 export default function RootLayout({
