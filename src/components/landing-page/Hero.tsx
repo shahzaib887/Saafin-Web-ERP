@@ -37,7 +37,7 @@ export default function Hero() {
       />
 
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-16 text-left md:px-16 md:pb-20">
-        <h1 className="max-w-3xl font-[family-name:var(--font-heading)] text-[clamp(2.5rem,8vw,6.5rem)] font-semibold leading-[0.95] tracking-tight text-white/90">
+        <h1 className="max-w-5xl font-[family-name:var(--font-heading)]  uppercase  text-[clamp(1.5rem,7vw,5.5rem)] font-extrabold leading-[0.95] tracking-tight text-white/90">
           Pure Hydration. Meet Saafin.
         </h1>
 

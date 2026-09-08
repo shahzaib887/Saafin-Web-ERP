@@ -31,7 +31,7 @@ const STEPS = [
 ];
 
 const IMAGE =
-  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_hjc7quhjc7quhjc7.jpg";
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_cq81f2cq81f2cq81.jpg?updatedAt=1788783483129";
 
 export default function Combine() {
   const [active, setActive] = useState("packaging");
