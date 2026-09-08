@@ -7,7 +7,8 @@ const products = [
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_eejvh0eejvh0eejv.jpg?updatedAt=1788452014242",
 	},
 	{
-		category: "FAMILY",
+		id: 2,
+		name: "Saafin Family 1.5 L",
 		bestFor: "Families • Home • Meals",
 		image:
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_4gt55n4gt55n4gt5.jpg?updatedAt=1788449991119",
