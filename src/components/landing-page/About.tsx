@@ -16,7 +16,7 @@ export default function About() {
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-saafin-lg md:aspect-auto">
             <img
-              src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=1200&auto=format&fit=crop"
+              src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136"
               alt="Saafin mineral water"
               className="h-full w-full object-cover"
             />

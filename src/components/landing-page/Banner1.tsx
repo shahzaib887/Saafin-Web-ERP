@@ -31,7 +31,7 @@ const STEPS = [
 ];
 
 const IMAGE =
-  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_hjc7quhjc7quhjc7.jpg";
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136";
 
 export default function Combine() {
   const [active, setActive] = useState("packaging");
@@ -47,11 +47,11 @@ export default function Combine() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-saafin-dark-bg via-saafin-dark-bg/10 to-transparent" />
 
       <div className="relative z-10 px-6 pt-20 md:px-10">
-        <h2 className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-6xl">
+        <h2 className="text-4xl font-bold tracking-tight text-black -dark-text md:text-6xl">
           What Makes Saafin Different
         </h2>
 
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-saafin-dark-text/80 md:text-lg">
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-black -dark-text/80 md:text-lg">
           Saafin brings together naturally refreshing mineral water, careful
           quality standards, and thoughtful packaging to create a premium
           hydration experience for everyday life.
@@ -64,8 +64,8 @@ export default function Combine() {
               onClick={() => setActive(item.key)}
               className={`flex w-fit items-center gap-2 text-2xl font-semibold transition-colors md:text-3xl ${
                 active === item.key
-                  ? "text-saafin-dark-text"
-                  : "text-saafin-dark-text/100 hover:text-saafin-dark-text/70"
+                  ? "text-black -dark-text"
+                  : "text-black -dark-text/100 hover:text-saafin-dark-text/70"
               }`}
             >
               <span className="text-xl">+</span>

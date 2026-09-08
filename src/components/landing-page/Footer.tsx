@@ -26,7 +26,7 @@ export default function Footer() {
           >
             <div className="relative h-10 w-10 overflow-hidden rounded-full">
               <img
-                src="https://scontent.cdninstagram.com/v/t51.82787-19/753206049_18332924344281192_6079860178002676486_n.jpg?_nc_cat=105&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44OTYuQzMifQ%3D%3D&_nc_ohc=uMYNlHwrlJ0Q7kNvwEGxDxI&_nc_oc=Ado_3lIiyVdcvq8yRfW7vhq9wCPDboP8J1vEbdQhnnpc9YvMxaCc8c7MurHBYgVUyEQ&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=CMWa7Mm8IGjdA3dK427WaQ&_nc_ss=7baaf&oh=00_AQLAUZBkYd3TnS9ndbUNbb6cSdox8ya4DzuzTrlUXJ2_xw&oe=6A9F7605"
+                src="https://ik.imagekit.io/mmyzvdovbv/Saafin/web%20image.jpg"
                 alt="Team member"
                 className="object-cover"
                 sizes="40px"
