@@ -47,15 +47,15 @@ export default function Combine() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-saafin-dark-bg via-saafin-dark-bg/10 to-transparent" />
 
       <div className="relative z-10 px-6 pt-20 md:px-10">
-        <h2 className="text-4xl font-bold tracking-tight text-black -dark-text md:text-6xl">
+        {/* <h2 className="text-4xl font-bold tracking-tight text-black -dark-text md:text-6xl">
           What Makes Saafin Different
-        </h2>
+        </h2> */}
 
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-black -dark-text/80 md:text-lg">
+        {/* <p className="mt-6 max-w-2xl text-base leading-relaxed text-black -dark-text/80 md:text-lg">
           Saafin brings together naturally refreshing mineral water, careful
           quality standards, and thoughtful packaging to create a premium
           hydration experience for everyday life.
-        </p>
+        </p> */}
 
         <div className="mt-8 flex flex-col gap-2">
           {ACCORDION_ITEMS.map((item) => (
