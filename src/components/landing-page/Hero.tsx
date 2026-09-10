@@ -6,16 +6,23 @@ import Reveal from "@/components/Reveal";
 const HERO_IMAGE =
   "https://ik.imagekit.io/mmyzvdovbv/Saafin/ChatGPT%20Image%20Sep%208,%202026,%2006_37_58%20PM.png";
 
+// Blur placeholder (1x1 blurred image)
+const BLUR_DATA_URL =
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAACAAIDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=";
+
 export default function Hero() {
   return (
     <section className="relative flex h-screen min-h-[720px] w-full items-center justify-center overflow-hidden bg-[#0A1B1F]">
       <Reveal className="absolute inset-0" delay={0.15}>
         <Image
           src={HERO_IMAGE}
-          alt="Saafin"
+          alt="Saafin Premium Mineral Water - Hero Image"
           fill
           priority
+          quality={85}
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
           className="object-cover"
         />
       </Reveal>
