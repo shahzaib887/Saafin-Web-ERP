@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const STEPS = [
   {
     number: "01",
@@ -58,18 +60,23 @@ export default function HowItWorks() {
     <section id="process" className="dark bg-saafin-dark-bg text-saafin-dark-text">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:px-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
-          <h2 className="text-4xl font-bold tracking-tight text-saafin-dark-text md:text-6xl">
-            From source to sip
-          </h2>
-          <p className="max-w-xs text-sm leading-relaxed text-saafin-dark-muted">
-            A simple process built around purity, quality, and a great-tasting
-            bottle of water.
-          </p>
+          <Reveal delay={0.1}>
+            <h2 className="text-4xl uppercase font-bold tracking-tight text-saafin-dark-text md:text-6xl">
+              From source to sip
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="max-w-xs text-sm leading-relaxed text-saafin-dark-muted">
+              A simple process built around purity, quality, and a great-tasting
+              bottle of water.
+            </p>
+          </Reveal>
         </div>
 
         <div className="mt-20 grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
-          {STEPS.map((step) => (
-            <div key={step.number}>
+          {STEPS.map((step, index) => (
+            <Reveal key={step.number} delay={0.12 + index * 0.08}>
+              <div>
               <div className="flex items-center gap-3 text-saafin-dark-text">
                 <div className="h-9 w-9">{step.icon}</div>
                 <span className="text-xs text-saafin-dark-muted">
@@ -77,13 +84,14 @@ export default function HowItWorks() {
                 </span>
               </div>
 
-              <h3 className="mt-16 text-base font-semibold text-saafin-dark-text">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-saafin-dark-muted">
-                {step.description}
-              </p>
-            </div>
+                <h3 className="mt-16 text-base font-semibold text-saafin-dark-text">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-saafin-dark-muted">
+                  {step.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

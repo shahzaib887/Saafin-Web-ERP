@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const footerLinks = [
   { label: "Terms of Service", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
@@ -8,13 +10,15 @@ export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-saafin-dark-bg">
       <div className="mx-auto max-w-5xl px-8 pt-32 pb-16 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight">
-          <span className="text-saafin-dark-muted">
-            Stay Refreshed with Saafin Premium Mineral Water
-          </span>
-        </h2>
+        <Reveal delay={0.1}>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium  tracking-tight">
+            <span className="text-white uppercase ">
+              Stay Refreshed with Saafin Premium Mineral Water
+            </span>
+          </h2>
+        </Reveal>
 
-        <div className="mt-14 flex justify-center">
+        <Reveal delay={0.2} className="mt-14 flex justify-center">
           <a
             href="/contact"
             className="
@@ -42,7 +46,7 @@ export default function Footer() {
               </p>
             </div>
           </a>
-        </div>
+        </Reveal>
       </div>
 
       <div className="relative mx-auto max-w-7xl px-8">
@@ -55,8 +59,10 @@ export default function Footer() {
               select-none text-center
             "
             style={{
-              maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 60%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 60%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 60%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 60%, transparent 100%)",
             }}
           >
             SAAFIN
@@ -64,7 +70,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-8 py-6">
+      <Reveal delay={0.3} className="mx-auto max-w-7xl px-8 py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-saafin-dark-muted">
             &copy;2026 SAAFIN. All rights reserved.
@@ -81,14 +87,22 @@ export default function Footer() {
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </footer>
   );
 }
 
 function ArrowRightIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M5 12h14" />
       <path d="m12 5 7 7-7 7" />
     </svg>

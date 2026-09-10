@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "locomotive-scroll/dist/locomotive-scroll.css";
+
+html {
+  scroll-behavior: smooth;
+}
 
 /* ═══════════════════════════════════════════════════════════════
    SAAFIN — GLOBAL DESIGN SYSTEM
@@ -86,20 +89,18 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-
 /* ═══════════════════════════════════════════════════════════════
    2. SAAFIN BRAND TOKENS
    These are intentionally separate from Shadcn semantic tokens.
    ═══════════════════════════════════════════════════════════════ */
 
 @theme inline {
-
   /* ─────────────────────────────────────────────────────────────
      BRAND COLORS
      ───────────────────────────────────────────────────────────── */
 
   --color-saafin-primary-bg: #ffffff;
-  --color-saafin-primary-text: #121212; 
+  --color-saafin-primary-text: #121212;
 
   --color-saafin-secondary-text: #0d0d0d;
 
@@ -111,12 +112,11 @@
 
   /* Dark */
 
-  --color-saafin-dark-bg: #121212;
+  --color-saafin-dark-bg: #000000;
   --color-saafin-dark-text: #ffffff;
   --color-saafin-dark-muted: #888888;
   --color-saafin-dark-surface: #1a1a1a;
   --color-saafin-dark-border: #2a2a2a;
-
 
   /* ─────────────────────────────────────────────────────────────
      TYPOGRAPHY
@@ -167,7 +167,6 @@
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em;
 
-
   /* ─────────────────────────────────────────────────────────────
      SPACING
      ───────────────────────────────────────────────────────────── */
@@ -209,7 +208,6 @@
   --spacing-80: 20rem;
   --spacing-96: 24rem;
 
-
   /* ─────────────────────────────────────────────────────────────
      BRAND RADIUS
      ───────────────────────────────────────────────────────────── */
@@ -224,49 +222,36 @@
   --radius-saafin-4xl: 2rem;
   --radius-saafin-full: 9999px;
 
-
   /* ─────────────────────────────────────────────────────────────
      BRAND SHADOWS
      ───────────────────────────────────────────────────────────── */
 
-  --shadow-saafin-sm:
-    0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-saafin-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
   --shadow-saafin-md:
-    0 4px 6px -1px rgb(0 0 0 / 0.08),
-    0 2px 4px -2px rgb(0 0 0 / 0.08);
+    0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
 
   --shadow-saafin-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.08),
-    0 4px 6px -4px rgb(0 0 0 / 0.08);
+    0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
 
   --shadow-saafin-xl:
-    0 20px 25px -5px rgb(0 0 0 / 0.08),
-    0 8px 10px -6px rgb(0 0 0 / 0.08);
+    0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
 
-  --shadow-saafin-2xl:
-    0 25px 50px -12px rgb(0 0 0 / 0.15);
+  --shadow-saafin-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
 
-  --shadow-saafin-inner:
-    inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
-
+  --shadow-saafin-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
 
   /* ─────────────────────────────────────────────────────────────
      TRANSITIONS
      ───────────────────────────────────────────────────────────── */
 
-  --transition-saafin-fast:
-    150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-saafin-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  --transition-saafin-base:
-    200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-saafin-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  --transition-saafin-slow:
-    300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-saafin-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  --transition-saafin-slower:
-    500ms cubic-bezier(0.4, 0, 0.2, 1);
-
+  --transition-saafin-slower: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ─────────────────────────────────────────────────────────────
      Z-INDEX
@@ -279,7 +264,6 @@
   --z-saafin-modal: 1050;
   --z-saafin-popover: 1060;
   --z-saafin-tooltip: 1070;
-
 
   /* ─────────────────────────────────────────────────────────────
      CONTAINERS
@@ -297,7 +281,6 @@
   --container-6xl: 72rem;
   --container-7xl: 80rem;
 
-
   /* ─────────────────────────────────────────────────────────────
      BREAKPOINTS
      ───────────────────────────────────────────────────────────── */
@@ -308,7 +291,6 @@
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 96rem;
 }
-
 
 /* ═══════════════════════════════════════════════════════════════
    3. SHADCN LIGHT THEME
@@ -363,7 +345,6 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-
 /* ═══════════════════════════════════════════════════════════════
    4. SHADCN DARK THEME
    ═══════════════════════════════════════════════════════════════ */
@@ -414,7 +395,6 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
-
 
 /* ═══════════════════════════════════════════════════════════════
    5. BASE STYLES

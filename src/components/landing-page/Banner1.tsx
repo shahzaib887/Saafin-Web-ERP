@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import Reveal from "@/components/Reveal";
 
 const ACCORDION_ITEMS = [
   {
@@ -35,7 +37,34 @@ const IMAGE =
 
 export default function Combine() {
   const [active, setActive] = useState("packaging");
-  const activeItem = ACCORDION_ITEMS.find((item) => item.key === active)!;
+  const [displayItem, setDisplayItem] = useState(
+    ACCORDION_ITEMS.find((item) => item.key === "packaging")!
+  );
+  const descRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const nextItem = ACCORDION_ITEMS.find((item) => item.key === active)!;
+    const el = descRef.current;
+    if (!el) return;
+
+    const tl = gsap.timeline();
+    tl.to(el, {
+      opacity: 0,
+      y: 12,
+      duration: 0.25,
+      ease: "power2.in",
+    }).call(() => setDisplayItem(nextItem));
+    tl.to(el, {
+      opacity: 1,
+      y: 0,
+      duration: 0.45,
+      ease: "power2.out",
+    });
+
+    return () => {
+      tl.kill();
+    };
+  }, [active]);
 
   return (
     <section className="dark relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-saafin-dark-bg text-saafin-dark-text">
@@ -44,50 +73,62 @@ export default function Combine() {
         alt="Saafin mineral water bottle"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-saafin-dark-bg via-saafin-dark-bg/10 to-transparent" />
+      {/* top darken so heading/accordion text stays readable over the bright sky */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/75 via-black/25 to-transparent" />
+      {/* bottom darken for the footer strip */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-saafin-dark-bg via-saafin-dark-bg/20 to-transparent" />
 
       <div className="relative z-10 px-6 pt-20 md:px-10">
-        {/* <h2 className="text-4xl font-bold tracking-tight text-black -dark-text md:text-6xl">
-          What Makes Saafin Different
-        </h2> */}
+        <Reveal delay={0.08}>
+          <h2 className="text-4xl font-bold tracking-tight text-white drop-shadow-md md:text-6xl">
+            What Makes Saafin Different
+          </h2>
+        </Reveal>
 
-        {/* <p className="mt-6 max-w-2xl text-base leading-relaxed text-black -dark-text/80 md:text-lg">
-          Saafin brings together naturally refreshing mineral water, careful
-          quality standards, and thoughtful packaging to create a premium
-          hydration experience for everyday life.
-        </p> */}
+        <Reveal delay={0.16}>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/90 drop-shadow-sm md:text-lg">
+            Saafin brings together naturally refreshing mineral water, careful
+            quality standards, and thoughtful packaging to create a premium
+            hydration experience for everyday life.
+          </p>
+        </Reveal>
 
         <div className="mt-8 flex flex-col gap-2">
-          {ACCORDION_ITEMS.map((item) => (
-            <button
-              key={item.key}
-              onClick={() => setActive(item.key)}
-              className={`flex w-fit items-center gap-2 text-2xl font-semibold transition-colors md:text-3xl ${
-                active === item.key
-                  ? "text-black -dark-text"
-                  : "text-black -dark-text/100 hover:text-saafin-dark-text/70"
-              }`}
-            >
-              <span className="text-xl">+</span>
-              {item.label}
-            </button>
+          {ACCORDION_ITEMS.map((item, index) => (
+            <Reveal key={item.key} delay={0.2 + index * 0.08}>
+              <button
+                onClick={() => setActive(item.key)}
+                className={`flex w-fit items-center gap-2 text-2xl font-semibold drop-shadow-sm transition-colors md:text-3xl ${
+                  active === item.key
+                    ? "text-white"
+                    : "text-white/50 hover:text-white/75"
+                }`}
+              >
+                <span className="text-xl">+</span>
+                {item.label}
+              </button>
+            </Reveal>
           ))}
         </div>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 border-t border-white/15 bg-saafin-dark-bg/20 backdrop-blur-sm md:grid-cols-[1.1fr_1fr_1fr_1fr_1fr]">
-        <div className="border-b border-white/15 px-6 py-8 md:border-b-0 md:border-r md:px-10">
-          <p className="max-w-xs text-sm leading-relaxed text-saafin-dark-text/80">
-            {activeItem.description}
+      <div className="relative z-10 grid grid-cols-1 border-t border-white/15 bg-saafin-dark-bg/20 backdrop-blur-sm md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
+        <Reveal className="border-b border-white/15 px-6 py-10 md:border-b-0 md:border-r md:px-10 md:py-12" delay={0.2}>
+          <p
+            ref={descRef}
+            className="max-w-sm text-base leading-relaxed text-saafin-dark-text md:text-xl"
+          >
+            {displayItem.description}
           </p>
-        </div>
+        </Reveal>
 
         {STEPS.map((s, i) => (
-          <div
+          <Reveal
             key={s.step}
             className={`px-6 py-8 md:px-10 ${
               i !== STEPS.length - 1 ? "border-b border-white/15 md:border-b-0 md:border-r" : ""
             }`}
+            delay={0.25 + i * 0.08}
           >
             <div className="flex items-baseline gap-2">
               <span className="text-4xl font-bold tracking-tight text-saafin-dark-text">
@@ -98,7 +139,7 @@ export default function Combine() {
             <p className="mt-6 text-sm font-medium text-saafin-dark-text">
               {s.title}
             </p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
