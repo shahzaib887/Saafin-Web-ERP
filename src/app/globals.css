@@ -160,8 +160,8 @@ html {
 
   /* Letter spacing */
 
-  --tracking-tighter: -0.04em;
-  --tracking-tight: -0.02em;
+  --tracking-tighterer: -0.04em;
+  --tracking-tighter: -0.02em;
   --tracking-normal: 0;
   --tracking-wide: 0.02em;
   --tracking-wider: 0.05em;

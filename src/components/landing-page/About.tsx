@@ -1,20 +1,28 @@
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
 
-const STATS = [
-  { value: "100%", label: "Pure mineral water" },
-  { value: "24/7", label: "Refreshing hydration" },
+const VALUES = [
+  {
+    title: "Quality Focused",
+    description: "Carefully bottled with attention to cleanliness and freshness.",
+  },
+  {
+    title: "Made for Everyday Life",
+    description: "Perfect for home, work, travel, meals, and everyday moments.",
+  },
+  {
+    title: "Refreshment You Can Rely On",
+    description: "Convenient bottled water for staying refreshed wherever you go.",
+  },
 ];
-
-const TRUSTED_BY = ["families", "athletes", "everyday life"];
 
 export default function About() {
   return (
     <section id="about" className="dark bg-saafin-dark-bg text-saafin-dark-text">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
         <Reveal delay={0.1}>
-          <h2 className="max-w-2xl text-3xl capitalize font-bold tracking-tight text-saafin-dark-text sm:text-4xl lg:text-5xl">
-            Water that keeps life moving
+          <h2 className="max-w-2xl text-3xl capitalize font-medium tracking-tighter text-saafin-dark-text sm:text-4xl lg:text-5xl">
+            Pure Hydration for Every Part of Your Day
           </h2>
         </Reveal>
 
@@ -33,44 +41,28 @@ export default function About() {
           <div className="flex flex-col">
             <Reveal delay={0.2}>
               <p className="max-w-md text-base leading-relaxed text-saafin-dark-text/90 md:text-lg">
-              Saafin brings naturally refreshing mineral water to your table.
-              We focus on clean taste, dependable quality, and packaging that
-                fits easily into busy everyday lives.
+              SAAFIN Water Solutions brings refreshing, quality bottled drinking
+              water to homes, offices, meals, and everyday moments. Carefully
+              bottled with a focus on purity, freshness, and dependable quality,
+              SAAFIN makes it easy to stay hydrated wherever life takes you.
               </p>
             </Reveal>
 
-            <div className="mt-16 grid grid-cols-2 gap-8">
-              {STATS.map((stat, index) => (
-                <Reveal key={stat.label} delay={0.25 + index * 0.1}>
+            <div className="mt-16 grid gap-8 sm:grid-cols-3 md:grid-cols-1">
+              {VALUES.map((value, index) => (
+                <Reveal key={value.title} delay={0.25 + index * 0.1}>
                   <div>
-                    <p className="text-3xl font-bold tracking-tight text-saafin-dark-text md:text-4xl">
-                      {stat.value}
+                    <p className="text-xl font-medium tracking-tight text-saafin-dark-text md:text-2xl">
+                      {value.title}
                     </p>
-                    <p className="mt-3 text-sm text-saafin-dark-muted">
-                      {stat.label}
+                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-saafin-dark-muted">
+                      {value.description}
                     </p>
                   </div>
                 </Reveal>
               ))}
             </div>
 
-            <Reveal className="mt-auto pt-16" delay={0.3}>
-              <div>
-                <p className="max-w-xs text-sm text-saafin-dark-muted">
-                  Made for people who choose better hydration every day.
-                </p>
-                <div className="mt-5 flex items-center gap-8">
-                  {TRUSTED_BY.map((brand) => (
-                    <span
-                      key={brand}
-                      className="text-sm font-semibold capitalize tracking-wider text-saafin-dark-muted"
-                    >
-                      {brand}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </div>

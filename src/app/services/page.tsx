@@ -103,7 +103,7 @@ export default function Services() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h1 className="text-4xl font-bold capitalize tracking-tight text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-medium capitalize tracking-tighter text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
               Premium Water Solutions
             </h1>
           </Reveal>
@@ -121,7 +121,7 @@ export default function Services() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-medium capitalize tracking-tighter mb-16 sm:text-4xl lg:text-5xl">
               Our Services
             </h2>
           </Reveal>
@@ -134,7 +134,7 @@ export default function Services() {
                   <div className="text-sm text-saafin-dark-muted font-semibold mb-2">
                     {service.number}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-saafin-dark-text">
+                  <h3 className="text-2xl font-medium mb-3 text-saafin-dark-text">
                     {service.title}
                   </h3>
                   <p className="text-saafin-dark-muted leading-relaxed">
@@ -151,7 +151,7 @@ export default function Services() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-medium capitalize tracking-tighter mb-16 sm:text-4xl lg:text-5xl">
               Why Choose Saafin
             </h2>
           </Reveal>
@@ -160,7 +160,7 @@ export default function Services() {
             {WHY_CHOOSE_US.map((item, i) => (
               <Reveal key={item.title} delay={0.12 + i * 0.08}>
                 <div className="flex flex-col">
-                  <h3 className="text-xl font-bold mb-3 text-saafin-dark-text">
+                  <h3 className="text-xl font-medium mb-3 text-saafin-dark-text">
                     {item.title}
                   </h3>
                   <p className="text-saafin-dark-muted leading-relaxed">
@@ -179,7 +179,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Reveal delay={0.1}>
               <div>
-                <h2 className="text-3xl font-bold capitalize tracking-tight mb-8 sm:text-4xl lg:text-5xl">
+                <h2 className="text-3xl font-medium capitalize tracking-tighter mb-8 sm:text-4xl lg:text-5xl">
                   Simple & Reliable
                 </h2>
                 <p className="text-lg text-saafin-dark-text/80 leading-relaxed mb-6">
@@ -261,7 +261,7 @@ export default function Services() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-medium capitalize tracking-tighter mb-6">
               Ready to Refresh?
             </h2>
           </Reveal>

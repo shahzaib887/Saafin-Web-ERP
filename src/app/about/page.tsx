@@ -109,7 +109,7 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h1 className="text-4xl font-bold capitalize tracking-tight text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-medium capitalize tracking-tighter text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
               Pure Hydration, Crafted with Care
             </h1>
           </Reveal>
@@ -142,7 +142,7 @@ export default function About() {
 
             <Reveal delay={0.15}>
               <div>
-                <h2 className="text-3xl font-bold capitalize tracking-tight mb-6 sm:text-4xl lg:text-5xl">
+                <h2 className="text-3xl font-medium capitalize tracking-tighter mb-6 sm:text-4xl lg:text-5xl">
                   The Saafin Journey
                 </h2>
                 <p className="text-base text-saafin-dark-text/80 leading-relaxed mb-6 md:text-lg">
@@ -172,7 +172,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal delay={0.1}>
               <div>
-                <h3 className="text-2xl font-bold capitalize tracking-tight mb-4 text-saafin-dark-text">
+                <h3 className="text-2xl font-medium capitalize tracking-tighter mb-4 text-saafin-dark-text">
                   Our Mission
                 </h3>
                 <p className="text-lg text-saafin-dark-text/80 leading-relaxed">
@@ -185,7 +185,7 @@ export default function About() {
 
             <Reveal delay={0.15}>
               <div>
-                <h3 className="text-2xl font-bold capitalize tracking-tight mb-4 text-saafin-dark-text">
+                <h3 className="text-2xl font-medium capitalize tracking-tighter mb-4 text-saafin-dark-text">
                   Our Vision
                 </h3>
                 <p className="text-lg text-saafin-dark-text/80 leading-relaxed">
@@ -202,7 +202,7 @@ export default function About() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-16">
+            <h2 className="text-4xl md:text-5xl font-medium capitalize tracking-tighter mb-16">
               Core Values
             </h2>
           </Reveal>
@@ -211,7 +211,7 @@ export default function About() {
             {VALUES.map((value, i) => (
               <Reveal key={value.title} delay={0.12 + i * 0.08}>
                 <div className="border-l-2 border-saafin-dark-surface pl-8">
-                  <h3 className="text-2xl font-bold mb-3 text-saafin-dark-text">
+                  <h3 className="text-2xl font-medium mb-3 text-saafin-dark-text">
                     {value.title}
                   </h3>
                   <p className="text-saafin-dark-muted leading-relaxed">
@@ -228,7 +228,7 @@ export default function About() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-16">
+            <h2 className="text-4xl md:text-5xl font-medium capitalize tracking-tighter mb-16">
               Our Capabilities
             </h2>
           </Reveal>
@@ -237,7 +237,7 @@ export default function About() {
             {CAPABILITIES.map((cap, i) => (
               <Reveal key={cap.title} delay={0.12 + i * 0.08}>
                 <div>
-                  <h3 className="text-xl font-bold mb-6 text-saafin-dark-text">
+                  <h3 className="text-xl font-medium mb-6 text-saafin-dark-text">
                     {cap.title}
                   </h3>
                   <ul className="space-y-3">
@@ -268,7 +268,7 @@ export default function About() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-medium capitalize tracking-tighter mb-6">
               Join the Saafin Community
             </h2>
           </Reveal>

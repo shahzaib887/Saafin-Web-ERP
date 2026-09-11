@@ -83,7 +83,7 @@ export default function Combine() {
 
       <div className="relative z-10 px-6 pt-20 md:px-10">
         <Reveal delay={0.08}>
-          <h2 className="text-3xl font-bold tracking-tight text-white drop-shadow-md sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-medium tracking-tighter text-white drop-shadow-md sm:text-4xl lg:text-5xl">
             What Makes Saafin Different
           </h2>
         </Reveal>
@@ -134,7 +134,7 @@ export default function Combine() {
             delay={0.25 + i * 0.08}
           >
             <div className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold tracking-tight text-saafin-dark-text">
+              <span className="text-4xl font-medium tracking-tighter text-saafin-dark-text">
                 {s.step}
               </span>
               <span className="text-xs text-saafin-dark-muted">Step</span>

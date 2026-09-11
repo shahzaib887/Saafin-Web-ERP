@@ -20,7 +20,7 @@ export default function ScrollAnimationExamples() {
       {/* Example 1: Reveal animation on scroll (fade + blur + translate) */}
       <Reveal delay={0} duration={0.8} y={32} blur={12}>
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-8 rounded-lg text-white">
-          <h2 className="text-2xl font-bold mb-4">Reveal Animation</h2>
+          <h2 className="text-2xl font-medium mb-4">Reveal Animation</h2>
           <p>
             This element appears with fade, blur, and translate animation when
             scrolling into view. Uses GSAP + ScrollTrigger.
@@ -34,7 +34,7 @@ export default function ScrollAnimationExamples() {
           <Reveal key={i} delay={i * 0.15} duration={0.8} y={40}>
             <div className="bg-gradient-to-br from-green-400 to-cyan-500 p-6 rounded-lg text-white h-48 flex items-center justify-center">
               <div className="text-center">
-                <h3 className="font-bold text-lg mb-2">Card {i + 1}</h3>
+                <h3 className="font-medium text-lg mb-2">Card {i + 1}</h3>
                 <p className="text-sm">Staggered reveal effect</p>
               </div>
             </div>
@@ -45,7 +45,7 @@ export default function ScrollAnimationExamples() {
       {/* Example 3: Parallax effect with ScrollEffects */}
       <ScrollEffects parallaxStrength={0.5}>
         <div className="bg-gradient-to-r from-orange-400 to-red-500 p-12 rounded-lg text-white">
-          <h2 className="text-2xl font-bold mb-4">Parallax Scroll Effect</h2>
+          <h2 className="text-2xl font-medium mb-4">Parallax Scroll Effect</h2>
           <p>This element moves at different speed as you scroll (parallax).</p>
         </div>
       </ScrollEffects>
@@ -53,7 +53,7 @@ export default function ScrollAnimationExamples() {
       {/* Example 4: Scale on scroll */}
       <ScrollEffects scaleOnScroll={true}>
         <div className="bg-gradient-to-r from-indigo-500 to-pink-500 p-12 rounded-lg text-white">
-          <h2 className="text-2xl font-bold mb-4">Scale Animation</h2>
+          <h2 className="text-2xl font-medium mb-4">Scale Animation</h2>
           <p>This element scales up smoothly as you scroll past it.</p>
         </div>
       </ScrollEffects>
@@ -61,7 +61,7 @@ export default function ScrollAnimationExamples() {
       {/* Example 5: Rotation on scroll */}
       <ScrollEffects rotateOnScroll={true}>
         <div className="bg-gradient-to-r from-teal-400 to-blue-500 p-12 rounded-lg text-white flex items-center justify-center h-64">
-          <h2 className="text-2xl font-bold">Rotate Animation</h2>
+          <h2 className="text-2xl font-medium">Rotate Animation</h2>
         </div>
       </ScrollEffects>
 
@@ -69,7 +69,7 @@ export default function ScrollAnimationExamples() {
       <Reveal delay={0.1} duration={1} y={50} blur={15}>
         <ScrollEffects parallaxStrength={0.3}>
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-12 rounded-lg text-white">
-            <h2 className="text-2xl font-bold mb-4">Combined Effects</h2>
+            <h2 className="text-2xl font-medium mb-4">Combined Effects</h2>
             <p>
               This uses both Reveal (fade-in) and Parallax effects together for
               a layered animation experience.
@@ -79,7 +79,7 @@ export default function ScrollAnimationExamples() {
       </Reveal>
 
       <div className="bg-gray-100 p-6 rounded-lg">
-        <h3 className="font-bold text-lg mb-4">📚 Component Reference</h3>
+        <h3 className="font-medium text-lg mb-4">📚 Component Reference</h3>
         <div className="space-y-4">
           <div>
             <h4 className="font-semibold text-blue-600">

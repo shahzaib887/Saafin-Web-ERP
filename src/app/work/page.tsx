@@ -92,7 +92,7 @@ export default function Work() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h1 className="text-4xl font-bold capitalize tracking-tight text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-medium capitalize tracking-tighter text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
               Our Work
             </h1>
           </Reveal>
@@ -116,7 +116,7 @@ export default function Work() {
                   <span className="text-xs font-semibold capitalize">Featured</span>
                   <div className="h-px w-8 bg-saafin-dark-muted" />
                 </div>
-                <h2 className="text-3xl font-bold capitalize tracking-tight mb-6 sm:text-4xl lg:text-5xl">
+                <h2 className="text-3xl font-medium capitalize tracking-tighter mb-6 sm:text-4xl lg:text-5xl">
                   Premium Brand Establishment
                 </h2>
                 <p className="text-lg text-saafin-dark-text/80 leading-relaxed mb-8">
@@ -160,7 +160,7 @@ export default function Work() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-medium capitalize tracking-tighter mb-16 sm:text-4xl lg:text-5xl">
               Recent Projects
             </h2>
           </Reveal>
@@ -185,7 +185,7 @@ export default function Work() {
                     </span>
                     <span className="text-xs text-saafin-dark-muted">{project.year}</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-saafin-dark-text group-hover:text-saafin-dark-muted transition-colors">
+                  <h3 className="text-2xl font-medium mb-3 text-saafin-dark-text group-hover:text-saafin-dark-muted transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-saafin-dark-muted leading-relaxed">
@@ -202,7 +202,7 @@ export default function Work() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-medium capitalize tracking-tighter mb-16 sm:text-4xl lg:text-5xl">
               Our Impact
             </h2>
           </Reveal>
@@ -210,7 +210,7 @@ export default function Work() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <Reveal delay={0.15}>
               <div>
-                <p className="text-5xl md:text-6xl font-bold text-saafin-dark-text mb-3">
+                <p className="text-5xl md:text-6xl font-medium text-saafin-dark-text mb-3">
                   4
                 </p>
                 <p className="text-lg text-saafin-dark-muted">
@@ -220,7 +220,7 @@ export default function Work() {
             </Reveal>
             <Reveal delay={0.2}>
               <div>
-                <p className="text-5xl md:text-6xl font-bold text-saafin-dark-text mb-3">
+                <p className="text-5xl md:text-6xl font-medium text-saafin-dark-text mb-3">
                   100%
                 </p>
                 <p className="text-lg text-saafin-dark-muted">
@@ -230,7 +230,7 @@ export default function Work() {
             </Reveal>
             <Reveal delay={0.25}>
               <div>
-                <p className="text-5xl md:text-6xl font-bold text-saafin-dark-text mb-3">
+                <p className="text-5xl md:text-6xl font-medium text-saafin-dark-text mb-3">
                   2+
                 </p>
                 <p className="text-lg text-saafin-dark-muted">
@@ -246,7 +246,7 @@ export default function Work() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-medium capitalize tracking-tighter mb-6">
               Start Your Project
             </h2>
           </Reveal>

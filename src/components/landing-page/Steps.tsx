@@ -3,8 +3,8 @@ import Reveal from "@/components/Reveal";
 const STEPS = [
   {
     number: "01",
-    title: "Sourced with care",
-    description: "We select mineral water sources with freshness and natural quality in mind.",
+    title: "Sourced with Care",
+    description: "We carefully select water sources with a focus on consistency and quality.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 21V10l6-3 6 3v11" />
@@ -16,8 +16,8 @@ const STEPS = [
   },
   {
     number: "02",
-    title: "Filtered for purity",
-    description: "Every bottle passes through careful quality checks before filling.",
+    title: "Quality Checked",
+    description: "Our water goes through quality checks designed to maintain reliable standards.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l1.3-1.3a3 3 0 1 1-4.3-4.3l-1.3 1.3a1 1 0 0 0 0 1.4Z" />
@@ -29,8 +29,8 @@ const STEPS = [
   },
   {
     number: "03",
-    title: "Sealed for freshness",
-    description: "Our bottles are sealed to protect every refreshing sip.",
+    title: "Bottled with Care",
+    description: "Using hygienic bottling practices, every bottle is prepared with attention to freshness and quality.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="16" rx="2" />
@@ -44,8 +44,8 @@ const STEPS = [
   },
   {
     number: "04",
-    title: "Ready for your day",
-    description: "Take Saafin with you wherever your day takes you — at home, at work, at the gym, or on the go.",
+    title: "Sealed for Freshness",
+    description: "Every bottle is securely sealed to help protect its freshness until it is ready to enjoy.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 2 11 13" />
@@ -61,14 +61,14 @@ export default function HowItWorks() {
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:px-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl capitalize font-bold tracking-tight text-saafin-dark-text sm:text-4xl lg:text-5xl">
-              From source to sip
+            <h2 className="text-3xl capitalize font-medium tracking-tighter text-saafin-dark-text sm:text-4xl lg:text-5xl">
+              Carefully Bottled. Made to Refresh.
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="max-w-xs text-sm leading-relaxed text-saafin-dark-muted">
-              A simple process built around purity, quality, and a great-tasting
-              bottle of water.
+              Every SAAFIN bottle goes through a carefully managed process focused
+              on cleanliness, quality, and freshness.
             </p>
           </Reveal>
         </div>

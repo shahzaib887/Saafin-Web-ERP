@@ -49,8 +49,8 @@ export default function ProductGrid() {
         </Reveal>
 
         <Reveal delay={0.18}>
-          <h2 className="mt-6 max-w-3xl text-3xl capitalize font-bold tracking-tight text-saafin-dark-text sm:text-4xl lg:text-5xl">
-            Pure hydration, made for every kind of day. Find your Saafin.
+          <h2 className="mt-6 max-w-3xl text-3xl capitalize font-medium tracking-tighter text-saafin-dark-text sm:text-4xl lg:text-5xl">
+            Pure Hydration for Every Moment. Choose SAAFIN.
           </h2>
         </Reveal>
       </div>
@@ -86,11 +86,11 @@ export default function ProductGrid() {
 
             <p className="max-w-sm py-6 text-sm leading-relaxed text-saafin-dark-muted">
               {card.label === "Saafin Pure" &&
-                "Clean, refreshing mineral water for everyday hydration. Perfect for staying refreshed wherever your day takes you."}
+                "Pure and refreshing bottled drinking water, carefully bottled for clean, reliable hydration. Its convenient 500 ml size makes it perfect for everyday use, travel, work, and staying refreshed on the go."}
               {card.label === "Saafin Family" &&
-                "Balanced mineral water for the whole family. A convenient choice for home, meals, and everyday hydration."}
+                "Refreshing and quality bottled drinking water designed for everyday family hydration. The 1.5 L bottle is ideal for homes, meals, offices, and sharing moments with family and friends."}
               {card.label === "Saafin Refresh" &&
-                "Refreshing mineral water made for moments when you need a light, convenient boost of hydration."}
+                "A convenient 330 ml bottle for quick refreshment at work, while travelling, or whenever you need a simple way to stay hydrated."}
             </p>
           </Reveal>
         ))}

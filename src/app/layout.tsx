@@ -16,18 +16,17 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://saafin.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Saafin | Premium Natural Mineral Water for Everyday Hydration",
+  title: "SAAFIN Water Solutions | Refreshment You Can Trust",
   description:
-    "Discover Saafin premium mineral water, carefully sourced and bottled for refreshing everyday hydration. Pure, fresh, and perfectly balanced minerals for your health.",
+    "SAAFIN brings clean, refreshing bottled drinking water for home, work, travel, meals, and everyday life.",
   keywords: [
-    "premium mineral water",
-    "natural mineral water",
-    "bottled mineral water",
+    "bottled drinking water",
     "pure drinking water",
-    "refreshing mineral water",
-    "family bottled water",
-    "everyday hydration",
-    "healthy water",
+    "refreshing bottled water",
+    "family drinking water",
+    "water for home and office",
+    "everyday refreshment",
+    "water delivery Pakistan",
   ],
   authors: [{ name: "Saafin Water" }],
   creator: "Saafin Water",
@@ -48,23 +47,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Saafin Water",
-    title: "Saafin | Premium Natural Mineral Water for Everyday Hydration",
+    title: "SAAFIN Water Solutions | Refreshment You Can Trust",
     description:
-      "Experience premium mineral water, carefully sourced and bottled for refreshing everyday hydration.",
+      "Clean, refreshing bottled drinking water for everyday life.",
     images: [
       {
         url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
         width: 1200,
         height: 630,
-        alt: "Saafin Premium Mineral Water",
+        alt: "SAAFIN bottled drinking water",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saafin | Premium Natural Mineral Water",
+    title: "SAAFIN Water Solutions | Bottled Drinking Water",
     description:
-      "Experience premium mineral water, carefully sourced and bottled for refreshing everyday hydration.",
+      "Clean, refreshing bottled drinking water for home, work, travel, and everyday life.",
     images: [
       "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
     ],

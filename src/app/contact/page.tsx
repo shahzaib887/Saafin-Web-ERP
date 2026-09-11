@@ -60,7 +60,7 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h1 className="text-4xl font-bold capitalize tracking-tight text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-medium capitalize tracking-tighter text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
               Let&apos;s Talk
             </h1>
           </Reveal>
@@ -78,7 +78,7 @@ export default function Contact() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-medium capitalize tracking-tighter mb-16 sm:text-4xl lg:text-5xl">
               Contact Information
             </h2>
           </Reveal>
@@ -87,10 +87,10 @@ export default function Contact() {
             {CONTACT_INFO.map((info, i) => (
               <Reveal key={info.label} delay={0.12 + i * 0.08}>
                 <div>
-                  <h3 className="text-sm font-bold capitalize tracking-widest text-saafin-dark-muted mb-2">
+                  <h3 className="text-sm font-medium capitalize tracking-widest text-saafin-dark-muted mb-2">
                     {info.label}
                   </h3>
-                  <p className="text-2xl font-bold text-saafin-dark-text mb-2">
+                  <p className="text-2xl font-medium text-saafin-dark-text mb-2">
                     {info.value}
                   </p>
                   <p className="text-saafin-dark-muted text-sm">
@@ -107,7 +107,7 @@ export default function Contact() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl font-bold capitalize tracking-tight mb-4 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-medium capitalize tracking-tighter mb-4 sm:text-4xl lg:text-5xl">
               Send us a Message
             </h2>
             <p className="text-lg text-saafin-dark-text/80 mb-16">
@@ -127,12 +127,12 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Reveal delay={0.1}>
               <div>
-                <h2 className="text-3xl font-bold capitalize tracking-tight mb-8 sm:text-4xl lg:text-5xl">
+                <h2 className="text-3xl font-medium capitalize tracking-tighter mb-8 sm:text-4xl lg:text-5xl">
                   Multiple Ways to Connect
                 </h2>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-bold mb-2 text-saafin-dark-text">
+                    <h3 className="text-lg font-medium mb-2 text-saafin-dark-text">
                       Phone Support
                     </h3>
                     <p className="text-saafin-dark-muted">
@@ -140,7 +140,7 @@ export default function Contact() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold mb-2 text-saafin-dark-text">
+                    <h3 className="text-lg font-medium mb-2 text-saafin-dark-text">
                       Email
                     </h3>
                     <p className="text-saafin-dark-muted">
@@ -148,7 +148,7 @@ export default function Contact() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold mb-2 text-saafin-dark-text">
+                    <h3 className="text-lg font-medium mb-2 text-saafin-dark-text">
                       Visit Us
                     </h3>
                     <p className="text-saafin-dark-muted">
@@ -179,7 +179,7 @@ export default function Contact() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl font-bold capitalize tracking-tight mb-6 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-medium capitalize tracking-tighter mb-6 sm:text-4xl lg:text-5xl">
               We&apos;re Here to Help
             </h2>
           </Reveal>

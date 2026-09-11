@@ -8,7 +8,7 @@ export function JsonLd() {
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
     description:
-      "Premium natural mineral water for everyday hydration, carefully sourced and bottled.",
+      "Clean, refreshing bottled drinking water for home, work, travel, and everyday life.",
     sameAs: [
       "https://www.facebook.com/saafin",
       "https://www.instagram.com/saafin",
@@ -39,9 +39,9 @@ export function JsonLd() {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Saafin Premium Mineral Water",
+    name: "SAAFIN Bottled Drinking Water",
     description:
-      "Premium natural mineral water, carefully sourced and bottled for refreshing everyday hydration.",
+      "Clean, refreshing bottled drinking water, carefully prepared and sealed for everyday life.",
     image:
       "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
     brand: {

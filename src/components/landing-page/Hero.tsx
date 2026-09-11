@@ -59,15 +59,15 @@ export default function Hero() {
 
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-16 text-left md:px-16 md:pb-20">
         <Reveal className="w-full" delay={0.1}>
-          <h1 className="max-w-5xl font-[family-name:var(--font-heading)] capitalize text-[clamp(2rem,5vw,4.5rem)] font-extrabold leading-[0.98] tracking-tight text-black md:text-white/90">
-            Pure Hydration. Meet Saafin.
+          <h1 className="max-w-4xl font-[family-name:var(--font-heading)] capitalize text-[clamp(2rem,5vw,4.5rem)] font-medium  leading-[0.98] tracking-tighter text-black md:text-white/90">
+            Pure Water. Refreshment You Can Trust.
           </h1>
         </Reveal>
 
         <Reveal className="mt-4 max-w-lg" delay={0.2}>
           <p className="max-w-xl text-balance text-base font-normal leading-relaxed text-black/70 md:text-white/75 md:text-lg">
-            Pure mineral water for every moment, carefully bottled to keep you
-            refreshed from the first sip to the last.
+            SAAFIN brings clean, refreshing bottled drinking water for everyday
+            life — whether you&apos;re at home, at work, travelling, or on the go.
           </p>
         </Reveal>
 
@@ -76,7 +76,7 @@ export default function Hero() {
             href="#products"
             className="inline-flex items-center gap-3 rounded-full bg-black px-8 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#F6C083] hover:text-[#0A1B1F] md:bg-white md:text-[#0A1B1F]"
           >
-            Explore Saafin
+            Explore Our Range
             <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
               <path d="M6 2h12v20l-6-4.2L6 22V2z" />
             </svg>

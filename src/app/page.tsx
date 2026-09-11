@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import About from "@/components/landing-page/About";
-import Banner1 from "@/components/landing-page/Banner1";
 import Footer from "@/components/landing-page/Footer";
 import FeaturedProducts from "@/components/landing-page/FeaturedProducts";
 import Hero from "@/components/landing-page/Hero";
@@ -8,18 +7,18 @@ import ProductGrid from "@/components/landing-page/ProductGrid";
 import HowItWorks from "@/components/landing-page/Steps";
 
 export const metadata: Metadata = {
-  title: "Saafin | Premium Natural Mineral Water for Everyday Hydration",
+  title: "SAAFIN Water Solutions | Refreshment You Can Trust",
   description:
-    "Discover Saafin premium mineral water, carefully sourced and bottled for refreshing everyday hydration. Pure, fresh, and perfectly balanced minerals for your health.",
+    "SAAFIN brings clean, refreshing bottled drinking water for home, work, travel, meals, and everyday life.",
   openGraph: {
-    title: "Saafin | Premium Natural Mineral Water",
-    description: "Experience premium mineral water for everyday hydration.",
+    title: "SAAFIN Water Solutions | Bottled Drinking Water",
+    description: "Clean, refreshing bottled drinking water for everyday life.",
     images: [
       {
         url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
         width: 1200,
         height: 630,
-        alt: "Saafin Premium Mineral Water",
+        alt: "SAAFIN bottled drinking water",
       },
     ],
   },
@@ -31,7 +30,6 @@ export default function Home() {
       <Hero />
       <ProductGrid />
       <FeaturedProducts />
-      <Banner1 />
       <About />
       <HowItWorks />
       <Footer />

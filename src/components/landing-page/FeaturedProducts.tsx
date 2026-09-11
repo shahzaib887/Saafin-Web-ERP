@@ -5,14 +5,14 @@ const products = [
 	{
 		id: 1,
 		name: "Saafin Pure 500 ml",
-		bestFor: "Everyday • On the Go • Active Lifestyle",
+		bestFor: "Everyday Use • Travel • Work • On the Go",
 		image:
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_eejvh0eejvh0eejv.jpg?updatedAt=1788452014242",
 	},
 	{
 		id: 2,
 		name: "Saafin Family 1.5 L",
-		bestFor: "Families • Home • Meals",
+		bestFor: "Home • Family Meals • Gatherings • Sharing",
 		image:
 			"https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_4gt55n4gt55n4gt5.jpg?updatedAt=1788449991119",
 	},
@@ -24,13 +24,13 @@ export default function FeaturedProducts() {
 			<div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
 				<div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
 					<Reveal delay={0.1}>
-						<h2 className="text-3xl font-bold tracking-tight capitalize text-saafin-dark-text sm:text-4xl lg:text-5xl">
-							Saafin essentials
+						<h2 className="text-3xl font-medium tracking-tighter capitalize text-saafin-dark-text sm:text-4xl lg:text-5xl">
+							Pure Hydration. Everyday Essentials.
 						</h2>
 					</Reveal>
 					<Reveal delay={0.2}>
 						<p className="max-w-sm text-sm leading-relaxed text-white/80">
-							Clean, refreshing mineral water in sizes made for your everyday routine.
+							SAAFIN offers convenient bottled drinking water for home, office, travel, and daily routines.
 						</p>
 					</Reveal>
 				</div>
@@ -54,19 +54,19 @@ export default function FeaturedProducts() {
 								</h3>
 								<p className="mt-3 max-w-sm text-sm leading-relaxed text-white/80">
 									{product.id === 1
-										? "Natural mineral water designed for everyday hydration. Convenient, refreshing, and easy to take with you."
-										: "Balanced mineral water made for sharing. Keep your family refreshed at home, around the table, or throughout the day."}
+										? "Designed for life on the move. The convenient 500 ml bottle is easy to carry and ideal for work, travel, outdoor activities, and everyday refreshment."
+										: "Made for the moments you share. The 1.5 L bottle is ideal for homes, family meals, gatherings, and keeping everyone refreshed throughout the day."}
 								</p>
 							</div>
 
 							<div className="mt-10">
-								<p className="text-xs capitalize tracking-widest text-white/80">Best for</p>
+								<p className="text-xs capitalize tracking-widest text-white/80">Best For</p>
 								<p className="mt-2 text-sm text-saafin-dark-text">{product.bestFor}</p>
 							</div>
 
 						<Reveal delay={0.25 + i * 0.14}>
 							<button className="mt-8 inline-flex w-fit items-center gap-3 rounded-saafin-full bg-saafin-dark-surface px-6 py-3 text-sm font-medium text-saafin-dark-text transition-colors hover:bg-saafin-dark-border">
-								Explore Bottle
+								{product.id === 1 ? "Explore SAAFIN Pure" : "Explore SAAFIN Family"}
 								<svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
 									<path d="M6 2h12v20l-6-4.2L6 22V2z" />
 								</svg>
