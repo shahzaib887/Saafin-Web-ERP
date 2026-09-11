@@ -42,7 +42,8 @@ export function JsonLd() {
     name: "Saafin Premium Mineral Water",
     description:
       "Premium natural mineral water, carefully sourced and bottled for refreshing everyday hydration.",
-    image: "https://ik.imagekit.io/mmyzvdovbv/Saafin/product-image.jpg",
+    image:
+      "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
     brand: {
       "@type": "Brand",
       name: "Saafin",

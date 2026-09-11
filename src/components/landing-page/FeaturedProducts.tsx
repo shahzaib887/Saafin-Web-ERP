@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 
 const products = [
 	{
@@ -23,7 +24,7 @@ export default function FeaturedProducts() {
 			<div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
 				<div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
 					<Reveal delay={0.1}>
-						<h2 className="text-4xl font-bold tracking-tight uppercase text-saafin-dark-text md:text-6xl">
+						<h2 className="text-3xl font-bold tracking-tight capitalize text-saafin-dark-text sm:text-4xl lg:text-5xl">
 							Saafin essentials
 						</h2>
 					</Reveal>
@@ -59,7 +60,7 @@ export default function FeaturedProducts() {
 							</div>
 
 							<div className="mt-10">
-								<p className="text-xs uppercase tracking-widest text-white/80">Best for</p>
+								<p className="text-xs capitalize tracking-widest text-white/80">Best for</p>
 								<p className="mt-2 text-sm text-saafin-dark-text">{product.bestFor}</p>
 							</div>
 
@@ -74,7 +75,14 @@ export default function FeaturedProducts() {
 						</div>
 
 						<div className="relative aspect-4/5 w-full overflow-hidden rounded-saafin-lg">
-							<img src={product.image} alt={product.name} className="h-full w-full object-cover" />
+							<Image
+								src={product.image}
+								alt={product.name}
+								fill
+								loading="lazy"
+								sizes="(max-width: 768px) 100vw, 25vw"
+								className="h-full w-full object-cover"
+							/>
 						</div>
 					</Reveal>
 				))}

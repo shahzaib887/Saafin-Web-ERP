@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 
 const CARDS = [
   {
@@ -23,9 +24,15 @@ const CARDS = [
 
 export default function ProductGrid() {
   return (
-    <section id="products" className="dark bg-saafin-dark-bg text-saafin-dark-text">
+    <section
+      id="products"
+      className="dark bg-saafin-dark-bg text-saafin-dark-text"
+    >
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
-        <Reveal className="flex items-center gap-2 text-saafin-dark-muted" delay={0.1}>
+        <Reveal
+          className="flex items-center gap-2 text-saafin-dark-muted"
+          delay={0.1}
+        >
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -42,7 +49,7 @@ export default function ProductGrid() {
         </Reveal>
 
         <Reveal delay={0.18}>
-          <h2 className="mt-6 max-w-3xl text-4xl uppercase font-bold tracking-tight text-saafin-dark-text md:text-6xl">
+          <h2 className="mt-6 max-w-3xl text-3xl capitalize font-bold tracking-tight text-saafin-dark-text sm:text-4xl lg:text-5xl">
             Pure hydration, made for every kind of day. Find your Saafin.
           </h2>
         </Reveal>
@@ -67,9 +74,12 @@ export default function ProductGrid() {
             </div>
 
             <div className="relative mt-6 aspect-3/4 w-full overflow-hidden rounded-t-saafin-lg">
-              <img
+              <Image
                 src={card.image}
                 alt={card.label}
+                fill
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="h-full w-full object-cover"
               />
             </div>

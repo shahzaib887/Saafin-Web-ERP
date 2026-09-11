@@ -61,7 +61,7 @@ export default function HowItWorks() {
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:px-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl uppercase font-bold tracking-tight text-saafin-dark-text md:text-6xl">
+            <h2 className="text-3xl capitalize font-bold tracking-tight text-saafin-dark-text sm:text-4xl lg:text-5xl">
               From source to sip
             </h2>
           </Reveal>

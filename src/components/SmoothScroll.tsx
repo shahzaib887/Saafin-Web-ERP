@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,15 +13,8 @@ type SmoothScrollProps = {
 
 export function SmoothScroll({ children }: SmoothScrollProps) {
   const lenisRef = useRef<Lenis | null>(null);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isClient) return;
-
     try {
       // Initialize Lenis for smooth scrolling
       const lenis = new Lenis({
@@ -35,26 +28,26 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
 
       lenisRef.current = lenis;
 
+      const tick = (time: number) => {
+        lenis.raf(time * 1000);
+      };
+
       // Integrate Lenis with GSAP ScrollTrigger
       lenis.on("scroll", ScrollTrigger.update);
 
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
+      gsap.ticker.add(tick);
 
       gsap.ticker.lagSmoothing(0);
 
       return () => {
-        gsap.ticker.remove((time) => {
-          lenis.raf(time * 1000);
-        });
+        gsap.ticker.remove(tick);
         lenis.destroy();
         lenisRef.current = null;
       };
     } catch (error) {
       console.warn("Lenis initialization error:", error);
     }
-  }, [isClient]);
+  }, []);
 
   return <>{children}</>;
 }

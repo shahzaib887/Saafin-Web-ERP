@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/landing-page/Navbar";
 import Footer from "@/components/landing-page/Footer";
 import Reveal from "@/components/Reveal";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description: "Premium mineral water services for everyday hydration.",
     images: [
       {
-        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/og-image.jpg",
+        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
         width: 1200,
         height: 630,
         alt: "Saafin Services",
@@ -102,13 +103,13 @@ export default function Services() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tight text-saafin-dark-text leading-tight">
+            <h1 className="text-4xl font-bold capitalize tracking-tight text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
               Premium Water Solutions
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-6 text-lg md:text-xl text-saafin-dark-text/80 leading-relaxed">
+            <p className="mt-6 text-base text-saafin-dark-text/80 leading-relaxed md:text-lg">
               From bottled water to corporate hydration solutions, we deliver
               pure refreshment designed for modern lifestyles.
             </p>
@@ -120,7 +121,7 @@ export default function Services() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-16">
+            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
               Our Services
             </h2>
           </Reveal>
@@ -150,7 +151,7 @@ export default function Services() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-16">
+            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
               Why Choose Saafin
             </h2>
           </Reveal>
@@ -178,14 +179,14 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Reveal delay={0.1}>
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-8">
+                <h2 className="text-3xl font-bold capitalize tracking-tight mb-8 sm:text-4xl lg:text-5xl">
                   Simple & Reliable
                 </h2>
                 <p className="text-lg text-saafin-dark-text/80 leading-relaxed mb-6">
                   Our streamlined process ensures you get premium mineral water
-                  when you need it, how you need it. Whether you're looking for
-                  single bottles or bulk corporate solutions, we've got you
-                  covered.
+                  when you need it, how you need it. Whether you&apos;re looking
+                  for single bottles or bulk corporate solutions, we&apos;ve got
+                  you covered.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -242,9 +243,12 @@ export default function Services() {
 
             <Reveal delay={0.2}>
               <div className="relative aspect-square w-full overflow-hidden rounded-saafin-lg bg-saafin-dark-surface">
-                <img
+                <Image
                   src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136"
                   alt="Saafin Service"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -257,7 +261,7 @@ export default function Services() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-6">
               Ready to Refresh?
             </h2>
           </Reveal>

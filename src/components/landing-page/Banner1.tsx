@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 
 const ACCORDION_ITEMS = [
   {
@@ -68,19 +69,21 @@ export default function Combine() {
 
   return (
     <section className="dark relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-saafin-dark-bg text-saafin-dark-text">
-      <img
+      <Image
         src={IMAGE}
         alt="Saafin mineral water bottle"
+        fill
+        loading="lazy"
+        sizes="100vw"
         className="absolute inset-0 h-full w-full object-cover"
       />
       {/* top darken so heading/accordion text stays readable over the bright sky */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/75 via-black/25 to-transparent" />
+      <div className="pointer-events-none h-350 absolute inset-0 bg-gradient-to-b from-black via-black/25 to-transparent" />
       {/* bottom darken for the footer strip */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-saafin-dark-bg via-saafin-dark-bg/20 to-transparent" />
 
       <div className="relative z-10 px-6 pt-20 md:px-10">
         <Reveal delay={0.08}>
-          <h2 className="text-4xl font-bold tracking-tight text-white drop-shadow-md md:text-6xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white drop-shadow-md sm:text-4xl lg:text-5xl">
             What Makes Saafin Different
           </h2>
         </Reveal>
@@ -116,7 +119,7 @@ export default function Combine() {
         <Reveal className="border-b border-white/15 px-6 py-10 md:border-b-0 md:border-r md:px-10 md:py-12" delay={0.2}>
           <p
             ref={descRef}
-            className="max-w-sm text-base leading-relaxed text-saafin-dark-text md:text-xl"
+            className="max-w-sm text-base leading-relaxed text-saafin-dark-text md:text-lg"
           >
             {displayItem.description}
           </p>

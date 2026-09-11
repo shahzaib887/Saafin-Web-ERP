@@ -1,59 +1,36 @@
-"use client";
-
-import { useState } from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/landing-page/Navbar";
 import Footer from "@/components/landing-page/Footer";
+import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 
 const CONTACT_INFO = [
-  {
-    label: "Email",
-    value: "hello@saafin.com",
-    description: "We typically respond within 24 hours",
-  },
-  {
-    label: "Phone",
-    value: "+1 (555) 123-4567",
-    description: "Monday to Friday, 9 AM to 6 PM",
-  },
-  {
-    label: "Address",
-    value: "123 Water Street, Hydration City, HC 12345",
-    description: "Visit our headquarters",
-  },
+  { label: "Email", value: "hello@saafin.com", description: "We typically respond within 24 hours" },
+  { label: "Phone", value: "+1 (555) 123-4567", description: "Monday to Friday, 9 AM to 6 PM" },
+  { label: "Address", value: "123 Water Street, Hydration City, HC 12345", description: "Visit our headquarters" },
 ];
 
+export const metadata: Metadata = {
+  title: "Contact Saafin | Premium Mineral Water",
+  description:
+    "Contact Saafin for premium mineral water orders, delivery questions, and corporate hydration solutions.",
+  openGraph: {
+    title: "Contact Saafin | Premium Mineral Water",
+    description: "Get in touch with the Saafin water team.",
+    images: [
+      {
+        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
+        width: 1200,
+        height: 630,
+        alt: "Contact Saafin",
+      },
+    ],
+  },
+};
+
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  };
 
   return (
     <>
@@ -83,14 +60,14 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tight text-saafin-dark-text leading-tight">
-              Let's Talk
+            <h1 className="text-4xl font-bold capitalize tracking-tight text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
+              Let&apos;s Talk
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-6 text-lg md:text-xl text-saafin-dark-text/80 leading-relaxed">
-              Have questions about Saafin? We'd love to hear from you. Reach out and let's 
+            <p className="mt-6 text-base text-saafin-dark-text/80 leading-relaxed md:text-lg">
+              Have questions about Saafin? We&apos;d love to hear from you. Reach out and let&apos;s 
               start a conversation.
             </p>
           </Reveal>
@@ -101,7 +78,7 @@ export default function Contact() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-16">
+            <h2 className="text-3xl font-bold capitalize tracking-tight mb-16 sm:text-4xl lg:text-5xl">
               Contact Information
             </h2>
           </Reveal>
@@ -110,7 +87,7 @@ export default function Contact() {
             {CONTACT_INFO.map((info, i) => (
               <Reveal key={info.label} delay={0.12 + i * 0.08}>
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-saafin-dark-muted mb-2">
+                  <h3 className="text-sm font-bold capitalize tracking-widest text-saafin-dark-muted mb-2">
                     {info.label}
                   </h3>
                   <p className="text-2xl font-bold text-saafin-dark-text mb-2">
@@ -130,111 +107,16 @@ export default function Contact() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">
+            <h2 className="text-3xl font-bold capitalize tracking-tight mb-4 sm:text-4xl lg:text-5xl">
               Send us a Message
             </h2>
             <p className="text-lg text-saafin-dark-text/80 mb-16">
-              Fill out the form below and we'll get back to you as soon as possible.
+              Fill out the form below and we&apos;ll get back to you as soon as possible.
             </p>
           </Reveal>
 
           <Reveal delay={0.15}>
-            <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Name Field */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-semibold text-saafin-dark-text mb-3"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-saafin-dark-surface border border-saafin-dark-border rounded-saafin-lg text-saafin-dark-text placeholder-saafin-dark-muted focus:outline-none focus:border-saafin-dark-text transition-colors"
-                  placeholder="John Doe"
-                />
-              </div>
-
-              {/* Email Field */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold text-saafin-dark-text mb-3"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-saafin-dark-surface border border-saafin-dark-border rounded-saafin-lg text-saafin-dark-text placeholder-saafin-dark-muted focus:outline-none focus:border-saafin-dark-text transition-colors"
-                  placeholder="john@example.com"
-                />
-              </div>
-
-              {/* Subject Field */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-semibold text-saafin-dark-text mb-3"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-saafin-dark-surface border border-saafin-dark-border rounded-saafin-lg text-saafin-dark-text placeholder-saafin-dark-muted focus:outline-none focus:border-saafin-dark-text transition-colors"
-                  placeholder="How can we help?"
-                />
-              </div>
-
-              {/* Message Field */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-semibold text-saafin-dark-text mb-3"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-saafin-dark-surface border border-saafin-dark-border rounded-saafin-lg text-saafin-dark-text placeholder-saafin-dark-muted focus:outline-none focus:border-saafin-dark-text transition-colors resize-none"
-                  placeholder="Tell us more about your inquiry..."
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 bg-saafin-dark-text text-saafin-dark-bg font-semibold rounded-full transition-colors duration-300 hover:bg-saafin-dark-border"
-                >
-                  Send Message
-                </button>
-              </div>
-
-              {/* Form Note */}
-              <p className="text-sm text-saafin-dark-muted text-center">
-                We respect your privacy. Your information will only be used to respond to your inquiry.
-              </p>
-            </form>
+            <ContactForm />
           </Reveal>
         </div>
       </section>
@@ -245,7 +127,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Reveal delay={0.1}>
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-8">
+                <h2 className="text-3xl font-bold capitalize tracking-tight mb-8 sm:text-4xl lg:text-5xl">
                   Multiple Ways to Connect
                 </h2>
                 <div className="space-y-6">
@@ -279,9 +161,12 @@ export default function Contact() {
 
             <Reveal delay={0.15}>
               <div className="relative aspect-square w-full overflow-hidden rounded-saafin-lg bg-saafin-dark-bg">
-                <img
+                <Image
                   src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_eejvh0eejvh0eejv.jpg?updatedAt=1788452014242"
                   alt="Contact us"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -294,8 +179,8 @@ export default function Contact() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6">
-              We're Here to Help
+            <h2 className="text-3xl font-bold capitalize tracking-tight mb-6 sm:text-4xl lg:text-5xl">
+              We&apos;re Here to Help
             </h2>
           </Reveal>
 
@@ -307,7 +192,7 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={0.3}>
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-3 rounded-full bg-saafin-dark-text px-8 py-4 text-sm font-semibold text-saafin-dark-bg transition-colors duration-300 hover:bg-saafin-dark-border"
             >
@@ -315,7 +200,7 @@ export default function Contact() {
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
                 <path d="M6 2h12v20l-6-4.2L6 22V2z" />
               </svg>
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>

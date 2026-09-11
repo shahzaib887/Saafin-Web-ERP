@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Experience premium mineral water for everyday hydration.",
     images: [
       {
-        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/og-image.jpg",
+        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
         width: 1200,
         height: 630,
         alt: "Saafin Premium Mineral Water",

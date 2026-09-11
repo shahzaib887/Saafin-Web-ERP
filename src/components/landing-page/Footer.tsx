@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 
 const footerLinks = [
   { label: "Terms of Service", href: "/terms" },
@@ -11,8 +12,8 @@ export default function Footer() {
     <footer className="relative w-full overflow-hidden bg-saafin-dark-bg">
       <div className="mx-auto max-w-5xl px-8 pt-32 pb-16 text-center">
         <Reveal delay={0.1}>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium  tracking-tight">
-            <span className="text-white uppercase ">
+          <h2 className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+            <span className="text-white capitalize ">
               Stay Refreshed with Saafin Premium Mineral Water
             </span>
           </h2>
@@ -29,11 +30,13 @@ export default function Footer() {
             "
           >
             <div className="relative h-10 w-10 overflow-hidden rounded-full">
-              <img
+              <Image
                 src="https://ik.imagekit.io/mmyzvdovbv/Saafin/web%20image.jpg"
                 alt="Team member"
-                className="object-cover"
+                fill
+                loading="lazy"
                 sizes="40px"
+                className="object-cover"
               />
             </div>
             <div className="text-left">
@@ -42,7 +45,7 @@ export default function Footer() {
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </p>
               <p className="text-[0.71rem] text-saafin-primary-text/60">
-                Pure hydration for every moment
+                ydration for every moment
               </p>
             </div>
           </a>
@@ -53,7 +56,7 @@ export default function Footer() {
         <div className="overflow-hidden">
           <p
             className="
-              text-[clamp(5rem,18vw,14rem)] font-heading
+              text-[clamp(3.5rem,10vw,8rem)] font-heading
               leading-none tracking-tighter
               text-saafin-dark-text
               select-none text-center

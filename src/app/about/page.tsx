@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/landing-page/Navbar";
 import Footer from "@/components/landing-page/Footer";
 import Reveal from "@/components/Reveal";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description: "Discover the Saafin story and our mission for premium hydration.",
     images: [
       {
-        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/og-image.jpg",
+        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
         width: 1200,
         height: 630,
         alt: "About Saafin",
@@ -108,13 +109,13 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tight text-saafin-dark-text leading-tight">
+            <h1 className="text-4xl font-bold capitalize tracking-tight text-saafin-dark-text leading-tight sm:text-5xl lg:text-6xl">
               Pure Hydration, Crafted with Care
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-6 text-lg md:text-xl text-saafin-dark-text/80 leading-relaxed">
+            <p className="mt-6 text-base text-saafin-dark-text/80 leading-relaxed md:text-lg">
               Saafin represents our commitment to delivering premium mineral water that 
               supports healthy, refreshing everyday hydration.
             </p>
@@ -128,9 +129,12 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Reveal delay={0.1}>
               <div className="relative aspect-square w-full overflow-hidden rounded-saafin-lg">
-                <img
+                <Image
                   src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136"
                   alt="Saafin water"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -138,21 +142,21 @@ export default function About() {
 
             <Reveal delay={0.15}>
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6">
+                <h2 className="text-3xl font-bold capitalize tracking-tight mb-6 sm:text-4xl lg:text-5xl">
                   The Saafin Journey
                 </h2>
-                <p className="text-lg text-saafin-dark-text/80 leading-relaxed mb-6">
+                <p className="text-base text-saafin-dark-text/80 leading-relaxed mb-6 md:text-lg">
                   Founded on the belief that premium hydration should be accessible to everyone, 
                   Saafin began with a simple mission: deliver pure, refreshing mineral water 
                   that supports a healthy lifestyle.
                 </p>
-                <p className="text-lg text-saafin-dark-text/80 leading-relaxed mb-6">
+                <p className="text-base text-saafin-dark-text/80 leading-relaxed mb-6 md:text-lg">
                   We carefully select our water sources, implement rigorous quality controls, 
                   and design convenient packaging that fits seamlessly into modern life. Today, 
                   Saafin is trusted by families, athletes, and health-conscious individuals 
                   across the region.
                 </p>
-                <p className="text-lg text-saafin-dark-text/80 leading-relaxed">
+                <p className="text-base text-saafin-dark-text/80 leading-relaxed md:text-lg">
                   Every bottle represents our dedication to excellence, sustainability, and 
                   the simple pleasure of pure refreshment.
                 </p>
@@ -168,7 +172,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal delay={0.1}>
               <div>
-                <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-saafin-dark-text">
+                <h3 className="text-2xl font-bold capitalize tracking-tight mb-4 text-saafin-dark-text">
                   Our Mission
                 </h3>
                 <p className="text-lg text-saafin-dark-text/80 leading-relaxed">
@@ -181,7 +185,7 @@ export default function About() {
 
             <Reveal delay={0.15}>
               <div>
-                <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-saafin-dark-text">
+                <h3 className="text-2xl font-bold capitalize tracking-tight mb-4 text-saafin-dark-text">
                   Our Vision
                 </h3>
                 <p className="text-lg text-saafin-dark-text/80 leading-relaxed">
@@ -198,7 +202,7 @@ export default function About() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-16">
               Core Values
             </h2>
           </Reveal>
@@ -224,7 +228,7 @@ export default function About() {
       <section className="bg-saafin-dark-surface text-saafin-dark-text">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-16">
               Our Capabilities
             </h2>
           </Reveal>
@@ -264,7 +268,7 @@ export default function About() {
       <section className="bg-saafin-dark-bg text-saafin-dark-text">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:px-10">
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold capitalize tracking-tight mb-6">
               Join the Saafin Community
             </h2>
           </Reveal>
