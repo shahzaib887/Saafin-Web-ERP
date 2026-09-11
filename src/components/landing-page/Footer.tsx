@@ -53,9 +53,9 @@ export default function Footer() {
           aria-hidden="true"
           className="text-[clamp(3.5rem,12vw,10rem)] font-heading leading-none tracking-tighter text-saafin-dark-text select-none text-center opacity-90"
           style={{
-            maskImage: "linear-gradient(to bottom, black 48%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, [#000000], transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 48%, transparent 100%)",
+              "linear-gradient(to bottom, black, transparent 100%)",
           }}
         >
           SAAFIN
