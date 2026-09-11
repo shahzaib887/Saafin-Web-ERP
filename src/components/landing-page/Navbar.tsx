@@ -10,7 +10,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-white/15">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-white/15 backdrop-blur-xl">
       <div className="flex h-20 items-stretch md:h-14">
         <div className="flex items-center gap-3 border-r border-white/15 px-6 md:px-10">
           <svg
