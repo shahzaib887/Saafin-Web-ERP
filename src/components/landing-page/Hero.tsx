@@ -66,8 +66,8 @@ export default function Hero() {
 
         <Reveal className="mt-4 max-w-lg" delay={0.2}>
           <p className="max-w-xl text-balance text-base font-normal leading-relaxed text-black/70 md:text-white/75 md:text-lg">
-            SAAFIN brings clean, refreshing bottled drinking water for everyday
-            life — whether you&apos;re at home, at work, travelling, or on the go.
+              SAAFIN brings clean, refreshing bottled drinking water for everyday
+              life whether you&apos;re at home, at work, travelling, or on the go.
           </p>
         </Reveal>
 
