@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "SAAFIN brings clean, refreshing bottled drinking water for home, work, travel, meals, and everyday life.",
   openGraph: {
+    url: "https://saafin-web-erp.vercel.app/",
     title: "SAAFIN Water Solutions | Bottled Drinking Water",
     description: "Clean, refreshing bottled drinking water for everyday life.",
     images: [
@@ -20,6 +21,14 @@ export const metadata: Metadata = {
         height: 630,
         alt: "SAAFIN bottled drinking water",
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SAAFIN Water Solutions | Refreshment You Can Trust",
+    description: "Clean, refreshing bottled drinking water for everyday life.",
+    images: [
+      "https://ik.imagekit.io/mmyzvdovbv/Saafin/tr:w-1200,h-630,c-maintain_ratio/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
     ],
   },
 };

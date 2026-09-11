@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/landing-page/Navbar";
 import { SmoothScroll } from "@/components/SmoothScroll";
@@ -12,7 +12,11 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://saafin.com";
+const baseUrl = (
+  process.env.NEXT_PUBLIC_BASE_URL || "https://saafin-web-erp.vercel.app"
+).replace(/\/$/, "");
+const ogImage =
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/tr:w-1200,h-630,c-maintain_ratio/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -45,14 +49,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: baseUrl,
+    url: `${baseUrl}/`,
     siteName: "Saafin Water",
     title: "SAAFIN Water Solutions | Refreshment You Can Trust",
     description:
       "Clean, refreshing bottled drinking water for everyday life.",
     images: [
       {
-        url: "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: "SAAFIN bottled drinking water",
@@ -65,12 +69,17 @@ export const metadata: Metadata = {
     description:
       "Clean, refreshing bottled drinking water for home, work, travel, and everyday life.",
     images: [
-      "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg?updatedAt=1788887507286",
+      ogImage,
     ],
   },
   alternates: {
-    canonical: baseUrl,
+    canonical: `${baseUrl}/`,
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#0A1B1F",
 };
 
 export default function RootLayout({
@@ -82,8 +91,6 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0A1B1F" />
         <link rel="preconnect" href="https://ik.imagekit.io" />
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
       </head>
