@@ -90,18 +90,17 @@ export default function Navbar() {
         <div className="flex h-12 items-stretch md:h-14">
           {/* Logo */}
           <div className="flex items-center gap-2 border-r border-white/15 px-4 md:gap-3 md:px-10">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              className="h-4 w-4 text-current md:h-5 md:w-5"
-            >
-              <line x1="12" y1="2" x2="12" y2="22" />
-              <line x1="4" y1="7" x2="20" y2="17" />
-              <line x1="20" y1="7" x2="4" y2="17" />
-            </svg>
+   <svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth={2}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  className="h-4 w-4 text-current md:h-5 md:w-5"
+>
+  <path d="M12 2.5s-7 7.2-7 12a7 7 0 0 0 14 0c0-4.8-7-12-7-12Z" />
+</svg>
             <span className="whitespace-nowrap text-xs font-semibold text-current sm:text-sm md:text-lg">
               Saafin Water
             </span>
