@@ -58,36 +58,36 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section id="process" className="dark bg-saafin-dark-bg text-saafin-dark-text">
-      <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:px-10">
+      <div className="mx-auto max-w-7xl px-6 pt-32 pb-36 md:px-16 md:pt-44 md:pb-48">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl capitalize font-medium tracking-tighter text-saafin-dark-text sm:text-4xl lg:text-5xl">
+            <h2 className="max-w-3xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
               Carefully Bottled. Made to Refresh.
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="max-w-xs text-sm leading-relaxed text-saafin-dark-muted">
+            <p className="max-w-[40ch] text-base leading-[1.65] text-saafin-dark-muted">
               Every SAAFIN bottle goes through a carefully managed process focused
               on cleanliness, quality, and freshness.
             </p>
           </Reveal>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
+        <div className="mt-24 grid grid-cols-1 gap-14 sm:grid-cols-2 md:grid-cols-4 md:gap-14">
           {STEPS.map((step, index) => (
             <Reveal key={step.number} delay={0.12 + index * 0.08}>
               <div>
               <div className="flex items-center gap-3 text-saafin-dark-text">
-                <div className="h-9 w-9">{step.icon}</div>
-                <span className="text-xs text-saafin-dark-muted">
+                <div className="h-11 w-11">{step.icon}</div>
+                <span className="ml-auto text-sm font-medium tracking-widest text-saafin-dark-muted">
                   {step.number}
                 </span>
               </div>
 
-                <h3 className="mt-16 text-base font-semibold text-saafin-dark-text">
+                <h3 className="mt-6 text-base font-semibold text-saafin-dark-text">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-saafin-dark-muted">
+                <p className="mt-4 text-base leading-[1.65] text-saafin-dark-muted">
                   {step.description}
                 </p>
               </div>

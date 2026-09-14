@@ -28,7 +28,7 @@ export default function ProductGrid() {
       id="products"
       className="dark bg-saafin-dark-bg text-saafin-dark-text"
     >
-      <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
+      <div className="mx-auto max-w-7xl px-6 pt-32 pb-20 md:px-16 md:pt-44 md:pb-28">
         <Reveal
           className="flex items-center gap-2 text-saafin-dark-muted"
           delay={0.1}
@@ -49,18 +49,20 @@ export default function ProductGrid() {
         </Reveal>
 
         <Reveal delay={0.18}>
-          <h2 className="mt-6 max-w-3xl text-3xl capitalize font-medium tracking-tighter text-saafin-dark-text sm:text-4xl lg:text-5xl">
+          <h2 className="mt-7 max-w-4xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
             Pure Hydration for Every Moment. Choose SAAFIN.
           </h2>
         </Reveal>
       </div>
 
-      <div className="grid grid-cols-1 border-t border-saafin-dark-border md:grid-cols-3">
+      <div className="grid grid-cols-1 border-t border-saafin-dark-border sm:grid-cols-2 lg:grid-cols-3">
         {CARDS.map((card, i) => (
           <Reveal
             key={card.label}
-            className={`flex flex-col border-saafin-dark-border px-6 pt-8 md:px-10 ${
-              i !== CARDS.length - 1 ? "border-b md:border-b-0 md:border-r" : ""
+            className={`flex flex-col border-saafin-dark-border px-6 pt-12 md:px-10 md:pt-16 ${
+              i !== CARDS.length - 1
+                ? "border-b sm:border-b-0 lg:border-b-0 lg:border-r"
+                : ""
             }`}
             delay={0.12 + i * 0.12}
           >
@@ -68,12 +70,12 @@ export default function ProductGrid() {
               <h3 className="text-base font-semibold text-saafin-dark-text">
                 {card.label}
               </h3>
-              <span className="text-sm text-saafin-dark-muted">
+              <span className="ml-4 text-sm tracking-widest text-saafin-dark-muted">
                 / {card.stat}
               </span>
             </div>
 
-            <div className="relative mt-6 aspect-3/4 w-full overflow-hidden rounded-t-saafin-lg">
+            <div className="relative mt-8 aspect-[4/5] w-full overflow-hidden rounded-saafin-lg">
               <Image
                 src={card.image}
                 alt={card.label}
@@ -84,7 +86,7 @@ export default function ProductGrid() {
               />
             </div>
 
-            <p className="max-w-sm py-6 text-sm leading-relaxed text-saafin-dark-muted">
+            <p className="max-w-sm pt-7 pb-12 text-base leading-[1.65] text-saafin-dark-muted">
               {card.label === "Saafin Pure" &&
                 "Pure and refreshing bottled drinking water, carefully bottled for clean, reliable hydration. Its convenient 500 ml size makes it perfect for everyday use, travel, work, and staying refreshed on the go."}
               {card.label === "Saafin Family" &&

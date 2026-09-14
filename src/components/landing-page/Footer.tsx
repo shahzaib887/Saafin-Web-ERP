@@ -12,17 +12,17 @@ export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-saafin-dark-bg">
       {/* CTA section */}
-      <div className="mx-auto max-w-4xl px-6 sm:px-8 pt-24 sm:pt-32 pb-14 sm:pb-16 text-center">
+      <div className="mx-auto max-w-4xl px-6 pt-32 pb-20 text-center sm:px-8 sm:pt-40 sm:pb-24">
         <Reveal delay={0.1}>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-medium tracking-tight text-white capitalize leading-tight">
+          <h2 className="text-[clamp(2.25rem,5vw,4.5rem)] font-medium leading-[1.08] tracking-tighter text-white capitalize">
             Stay Refreshed with Saafin Premium Mineral Water
           </h2>
         </Reveal>
 
-        <Reveal delay={0.2} className="mt-12 sm:mt-14 flex justify-center">
+        <Reveal delay={0.2} className="mt-16 flex justify-center sm:mt-20">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-4 rounded-full bg-saafin-dark-text px-6 py-3 transition-all duration-300 hover:bg-saafin-dark-surface hover:scale-[1.02]"
+            className="group inline-flex items-center gap-4 rounded-full bg-saafin-dark-text px-7 py-4 transition-all duration-300 hover:bg-saafin-dark-surface hover:scale-[1.02]"
           >
             <div className="relative h-10 w-10 overflow-hidden rounded-full shrink-0">
               <Image
@@ -48,10 +48,10 @@ export default function Footer() {
       </div>
 
       {/* Big wordmark */}
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 pt-16 sm:px-8 sm:pt-24">
         <p
           aria-hidden="true"
-          className="text-[clamp(3.5rem,12vw,10rem)] font-heading leading-none tracking-tighter text-saafin-dark-text select-none text-center opacity-90"
+          className="text-[clamp(4.5rem,14vw,12rem)] font-heading leading-none tracking-tighter text-saafin-dark-text select-none text-center opacity-90"
           style={{
             maskImage: "linear-gradient(to bottom, [#000000], transparent 100%)",
             WebkitMaskImage:
@@ -63,8 +63,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 mt-4">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="mt-12 border-t border-white/10 sm:mt-16">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-8 sm:flex-row sm:px-8">
           <p className="text-xs text-saafin-primary-bg/70">
             &copy; 2026 SAAFIN. All rights reserved.
           </p>
