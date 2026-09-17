@@ -3,22 +3,28 @@ import Image from "next/image";
 
 const CARDS = [
   {
+    label: "Saafin Refresh",
+    stat: "330 ml",
+    tagline: "A quick size for the commute, the gym bag, or the desk drawer.",
+    bestFor: "Commuting · Gym · Quick errands",
+    image:
+      "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_ungq13ungq13ungq.jpg",
+  },
+  {
     label: "Saafin Pure",
     stat: "500 ml",
+    tagline: "The everyday size — work, travel, and being out of the house.",
+    bestFor: "Office desks · Travel · Daily use",
     image:
       "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-01%20at%205.03.45%20PM.jpeg",
   },
   {
     label: "Saafin Family",
     stat: "1.5 L",
+    tagline: "For the dinner table, guests, and sharing at home.",
+    bestFor: "Home · Family meals · Gatherings",
     image:
       "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_cdjt6ccdjt6ccdjt.jpg",
-  },
-  {
-    label: "Saafin Refresh",
-    stat: "330 ml",
-    image:
-      "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_ungq13ungq13ungq.jpg",
   },
 ];
 
@@ -50,8 +56,14 @@ export default function ProductGrid() {
 
         <Reveal delay={0.18}>
           <h2 className="mt-7 max-w-4xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
-            Pure Hydration for Every Moment. Choose SAAFIN.
+            Three Sizes, One Standard.
           </h2>
+        </Reveal>
+        <Reveal delay={0.24}>
+          <p className="mt-5 max-w-[48ch] text-base leading-[1.65] text-saafin-dark-muted">
+            Whatever the occasion, SAAFIN keeps the same process behind every
+            bottle.
+          </p>
         </Reveal>
       </div>
 
@@ -59,11 +71,10 @@ export default function ProductGrid() {
         {CARDS.map((card, i) => (
           <Reveal
             key={card.label}
-            className={`flex flex-col border-saafin-dark-border px-6 pt-12 md:px-10 md:pt-16 ${
-              i !== CARDS.length - 1
+            className={`flex flex-col border-saafin-dark-border px-6 pt-12 md:px-10 md:pt-16 ${i !== CARDS.length - 1
                 ? "border-b sm:border-b-0 lg:border-b-0 lg:border-r"
                 : ""
-            }`}
+              }`}
             delay={0.12 + i * 0.12}
           >
             <div className="flex items-baseline justify-between">
@@ -78,7 +89,7 @@ export default function ProductGrid() {
             <div className="relative mt-8 aspect-[4/5] w-full overflow-hidden rounded-saafin-lg">
               <Image
                 src={card.image}
-                alt={card.label}
+                alt={`${card.label} — ${card.stat} bottled drinking water`}
                 fill
                 loading="lazy"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -86,13 +97,11 @@ export default function ProductGrid() {
               />
             </div>
 
-            <p className="max-w-sm pt-7 pb-12 text-base leading-[1.65] text-saafin-dark-muted">
-              {card.label === "Saafin Pure" &&
-                "Pure and refreshing bottled drinking water, carefully bottled for clean, reliable hydration. Its convenient 500 ml size makes it perfect for everyday use, travel, work, and staying refreshed on the go."}
-              {card.label === "Saafin Family" &&
-                "Refreshing and quality bottled drinking water designed for everyday family hydration. The 1.5 L bottle is ideal for homes, meals, offices, and sharing moments with family and friends."}
-              {card.label === "Saafin Refresh" &&
-                "A convenient 330 ml bottle for quick refreshment at work, while travelling, or whenever you need a simple way to stay hydrated."}
+            <p className="mt-7 text-base leading-[1.65] text-saafin-dark-muted">
+              {card.tagline}
+            </p>
+            <p className="mt-3 pb-12 text-xs tracking-widest text-saafin-dark-muted/60 uppercase">
+              {card.bestFor}
             </p>
           </Reveal>
         ))}

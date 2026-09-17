@@ -3,16 +3,19 @@ import Image from "next/image";
 
 const VALUES = [
   {
-    title: "Quality Focused",
-    description: "Carefully bottled with attention to cleanliness and freshness.",
+    title: "Getting the process right.",
+    description:
+      "Careful sourcing, consistent quality checks, hygienic bottling, and a tight seal on every bottle. Small enough that we can pay attention to it.",
   },
   {
-    title: "Made for Everyday Life",
-    description: "Perfect for home, work, travel, meals, and everyday moments.",
+    title: "Saying what's true.",
+    description:
+      "Including what we haven't proven yet. Where something isn't ready, we say so — rather than papering over the gap with invented numbers.",
   },
   {
-    title: "Refreshment You Can Rely On",
-    description: "Convenient bottled water for staying refreshed wherever you go.",
+    title: "The same standard for everyone.",
+    description:
+      "Whether you're buying for home or supplying a restaurant, the water in every bottle goes through the same process.",
   },
 ];
 
@@ -22,7 +25,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6 pt-32 pb-28 md:px-16 md:pt-44 md:pb-40">
         <Reveal delay={0.1}>
           <h2 className="max-w-4xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
-            Pure Hydration for Every Part of Your Day
+            A New Brand, Built Carefully.
           </h2>
         </Reveal>
 
@@ -30,7 +33,7 @@ export default function About() {
           <Reveal className="relative aspect-4/5 w-full overflow-hidden rounded-saafin-lg md:aspect-auto" delay={0.15}>
             <Image
               src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136"
-              alt="Saafin mineral water"
+              alt="SAAFIN bottled water — carefully bottled and sealed"
               fill
               loading="lazy"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -41,10 +44,11 @@ export default function About() {
           <div className="flex flex-col">
             <Reveal delay={0.2}>
               <p className="max-w-[55ch] text-lg leading-[1.65] text-saafin-dark-text/75">
-              SAAFIN Water Solutions brings refreshing, quality bottled drinking
-              water to homes, offices, meals, and everyday moments. Carefully
-              bottled with a focus on purity, freshness, and dependable quality,
-              SAAFIN makes it easy to stay hydrated wherever life takes you.
+                SAAFIN is a Pakistani bottled water brand. We&apos;re early in our
+                journey, and we&apos;d rather tell you exactly where we stand than
+                pretend otherwise. Right now, that means a small, defined process
+                we can actually stand behind — careful sourcing, consistent quality
+                checks, hygienic bottling, and a tight seal on every bottle.
               </p>
             </Reveal>
 
@@ -62,7 +66,6 @@ export default function About() {
                 </Reveal>
               ))}
             </div>
-
           </div>
         </div>
       </div>

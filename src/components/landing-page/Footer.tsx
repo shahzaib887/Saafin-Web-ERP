@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="mx-auto max-w-4xl px-6 pt-32 pb-20 text-center sm:px-8 sm:pt-40 sm:pb-24">
         <Reveal delay={0.1}>
           <h2 className="text-[clamp(2.25rem,5vw,4.5rem)] font-medium leading-[1.08] tracking-tighter text-white capitalize">
-            Stay Refreshed with Saafin Premium Mineral Water
+            Ready to Order?
           </h2>
         </Reveal>
 
@@ -36,11 +36,11 @@ export default function Footer() {
             </div>
             <div className="text-left">
               <p className="text-sm font-medium text-saafin-primary-text flex items-center gap-2">
-                Find Saafin
+                View Our Products
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </p>
               <p className="text-xs text-saafin-primary-text/60">
-                Hydration for every moment
+                Or contact us for business supply
               </p>
             </div>
           </Link>

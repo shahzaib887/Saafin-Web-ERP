@@ -6,8 +6,8 @@ import gsap from "gsap";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Work", href: "/work" },
+  { label: "Products", href: "#products" },
+  { label: "For Business", href: "#b2b" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -120,12 +120,12 @@ export default function Navbar() {
           </nav>
 
           {/* Shop Water - desktop */}
-          <div className="hidden items-center border-l border-white/15 bg-[#1c7a92]/30 px-8 md:flex md:px-12">
+          <div className="hidden items-center border-l border-white/15 bg-[#000000]/30 px-8 md:flex md:px-12">
             <Link
               href="#products"
-              className="text-sm font-medium text-current transition-colors hover:text-[#F6C083]"
+              className="text-sm font-medium text-current transition-colors hover:text-[#ffffff]/60"
             >
-              Shop Water
+              Order Water
             </Link>
           </div>
 
@@ -195,9 +195,9 @@ export default function Navbar() {
           <Link
             href="#products"
             onClick={() => setOpen(false)}
-            className="mobile-link mt-8 block rounded-xl bg-white py-4 text-center text-sm font-semibold text-black transition-colors hover:bg-[#1c7a92]/80"
+            className="mobile-link mt-8 block rounded-xl bg-white py-4 text-center text-sm font-semibold text-black transition-colors hover:bg-[#0000]/80"
           >
-            Shop Water
+            Order Water
           </Link>
         </div>
       </div>

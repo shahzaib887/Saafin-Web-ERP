@@ -4,52 +4,46 @@ const STEPS = [
   {
     number: "01",
     title: "Sourced with Care",
-    description: "We carefully select water sources with a focus on consistency and quality.",
+    description:
+      "Water sources are selected and checked before bottling begins — consistency starts here.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 21V10l6-3 6 3v11" />
-        <path d="M10 7V4l7-2v5" />
-        <path d="M17 3l4 1.5" />
-        <path d="M2 21h14" />
+        <path d="M12 2.5s-7 7.2-7 12a7 7 0 0 0 14 0c0-4.8-7-12-7-12Z" />
       </svg>
     ),
   },
   {
     number: "02",
     title: "Quality Checked",
-    description: "Our water goes through quality checks designed to maintain reliable standards.",
+    description:
+      "Each batch goes through quality checks before it's bottled. Same standard, every time.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l1.3-1.3a3 3 0 1 1-4.3-4.3l-1.3 1.3a1 1 0 0 0 0 1.4Z" />
-        <path d="M9.3 17.7a1 1 0 0 1 0-1.4l-1.6-1.6a1 1 0 0 1-1.4 0L5 16a3 3 0 1 0 4.3 4.3l1.3-1.3a1 1 0 0 1-1.3-1.3Z" />
-        <path d="M6.3 9.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4L8 13.6a3 3 0 1 1-4.3-4.3l1.3 1.3a1 1 0 0 1 1.3 1.3Z" />
-        <path d="M17.7 14.7a1 1 0 0 0-1.4 0l-1.6-1.6a1 1 0 0 0 0-1.4L16 10.4a3 3 0 1 1 4.3 4.3l-1.3-1.3a1 1 0 0 0-1.3 1.3Z" />
+        <polyline points="20 6 9 17 4 12" />
       </svg>
     ),
   },
   {
     number: "03",
-    title: "Bottled with Care",
-    description: "Using hygienic bottling practices, every bottle is prepared with attention to freshness and quality.",
+    title: "Bottled Hygienically",
+    description:
+      "Clean facilities, handled with care. Every bottle is prepared the same careful way.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <path d="M3 9h18" />
-        <path d="M7 13h6" />
-        <path d="M7 16h3" />
-        <path d="m15 15 3 3 3-3" />
-        <path d="M18 12v6" />
+        <rect x="7" y="2" width="10" height="20" rx="2" />
+        <path d="M7 8h10" />
+        <path d="M7 14h10" />
       </svg>
     ),
   },
   {
     number: "04",
     title: "Sealed for Freshness",
-    description: "Every bottle is securely sealed to help protect its freshness until it is ready to enjoy.",
+    description:
+      "Every bottle is sealed so you know it hasn't been opened before you. Check the seal when you receive it.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 2 11 13" />
-        <path d="M22 2 15 22l-4-9-9-4 20-7Z" />
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
   },
@@ -62,13 +56,13 @@ export default function HowItWorks() {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
           <Reveal delay={0.1}>
             <h2 className="max-w-3xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
-              Carefully Bottled. Made to Refresh.
+              How a SAAFIN Bottle Gets to You.
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="max-w-[40ch] text-base leading-[1.65] text-saafin-dark-muted">
-              Every SAAFIN bottle goes through a carefully managed process focused
-              on cleanliness, quality, and freshness.
+              Every SAAFIN bottle is sourced, checked, bottled, and sealed the
+              same way, every time.
             </p>
           </Reveal>
         </div>
@@ -77,12 +71,12 @@ export default function HowItWorks() {
           {STEPS.map((step, index) => (
             <Reveal key={step.number} delay={0.12 + index * 0.08}>
               <div>
-              <div className="flex items-center gap-3 text-saafin-dark-text">
-                <div className="h-11 w-11">{step.icon}</div>
-                <span className="ml-auto text-sm font-medium tracking-widest text-saafin-dark-muted">
-                  {step.number}
-                </span>
-              </div>
+                <div className="flex items-center gap-3 text-saafin-dark-text">
+                  <div className="h-11 w-11">{step.icon}</div>
+                  <span className="ml-auto text-sm font-medium tracking-widest text-saafin-dark-muted">
+                    {step.number}
+                  </span>
+                </div>
 
                 <h3 className="mt-6 text-base font-semibold text-saafin-dark-text">
                   {step.title}

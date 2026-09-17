@@ -4,7 +4,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 const DESKTOP_HERO_IMAGE =
-  "https://ik.imagekit.io/mmyzvdovbv/Saafin/WhatsApp%20Image%202026-09-16%20at%207.06.43%20PM.jpeg";
+  "https://ik.imagekit.io/mmyzvdovbv/Saafin/ChatGPT%20Image%20Sep%208,%202026,%2006_37_58%20PM.png?updatedAt=1788874698386";
 
 const MOBILE_HERO_IMAGE =
   "https://ik.imagekit.io/mmyzvdovbv/Saafin/Gemini_Generated_Image_ouxei1ouxei1ouxe.jpg?updatedAt=1788452014584";
@@ -21,7 +21,7 @@ export default function Hero() {
           <source media="(max-width: 720px)" srcSet={MOBILE_HERO_IMAGE} />
           <Image
             src={DESKTOP_HERO_IMAGE}
-            alt="Saafin Premium Mineral Water - Hero Image"
+            alt="SAAFIN bottled drinking water — clean, sealed, delivered"
             fill
             priority
             quality={85}
@@ -60,23 +60,25 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-20 text-left md:px-16 md:pb-28">
         <Reveal className="w-full" delay={0.1}>
           <h1 className="max-w-4xl font-[family-name:var(--font-heading)] capitalize text-[clamp(3rem,6vw,4.5rem)] font-medium leading-[1.05] tracking-tighter text-black md:text-white/90">
-            Pure Water. Refreshment You Can Trust.
+            Clean Water, Done Properly.
           </h1>
         </Reveal>
 
         <Reveal className="mt-6 max-w-2xl" delay={0.2}>
-          <p className="max-w-[480px] text-balance text-lg font-normal leading-relaxed text-black/70 md:text-white/75">
-            SAAFIN brings clean, refreshing bottled drinking water for everyday
-            life whether you&apos;re at home, at work, travelling, or on the go.
+          <p className="max-w-[520px] text-balance text-lg font-normal leading-relaxed text-black/70 md:text-white/75">
+            SAAFIN bottles drinking water for homes, offices, and businesses —
+            sourced, checked, sealed, and sent out the same careful way, every
+            time.
           </p>
         </Reveal>
 
-        <Reveal className="mt-8" delay={0.3}>
+        <Reveal className="mt-8 flex flex-wrap gap-3" delay={0.3}>
           <a
             href="#products"
+            id="hero-view-products"
             className="inline-flex items-center gap-3 rounded-full bg-black px-9 py-[17px] text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#F6C083] hover:text-[#0A1B1F] md:bg-white md:text-[#0A1B1F]"
           >
-            Explore Our Range
+            View Our Products
             <svg
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -84,6 +86,13 @@ export default function Hero() {
             >
               <path d="M6 2h12v20l-6-4.2L6 22V2z" />
             </svg>
+          </a>
+          <a
+            href="#b2b"
+            id="hero-supply-business"
+            className="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-9 py-[17px] text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white/20"
+          >
+            Supply My Business
           </a>
         </Reveal>
       </div>
