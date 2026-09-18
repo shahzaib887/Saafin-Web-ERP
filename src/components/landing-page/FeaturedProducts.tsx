@@ -29,15 +29,15 @@ const products = [
 export default function FeaturedProducts() {
 	return (
 		<section className="dark bg-saafin-dark-bg text-saafin-dark-text">
-			<div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10">
+			<div className="mx-auto max-w-7xl px-6 pt-16 pb-12 md:px-10 md:pt-20 md:pb-16">
 				<div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
 					<Reveal delay={0.1}>
-						<h2 className="text-3xl font-medium tracking-tighter capitalize text-saafin-dark-text sm:text-4xl lg:text-5xl">
+						<h2 className="text-[clamp(1.625rem,5.5vw,2.25rem)] font-medium tracking-tighter capitalize text-saafin-dark-text sm:text-4xl lg:text-5xl">
 							The right size for the right moment.
 						</h2>
 					</Reveal>
 					<Reveal delay={0.2}>
-						<p className="max-w-sm text-sm leading-relaxed text-white/80">
+						<p className="max-w-sm text-sm leading-relaxed text-white/90">
 							Grab a 330ml on your way out. Keep a 1.5L on the table for dinner.
 							SAAFIN has a size for wherever you are.
 						</p>
@@ -49,7 +49,7 @@ export default function FeaturedProducts() {
 				{products.map((product, i) => (
 					<Reveal
 						key={product.id}
-						className={`grid grid-cols-1 gap-8 px-6 py-10 sm:grid-cols-2 md:px-10 ${
+						className={`grid grid-cols-1 gap-8 px-6 py-8 sm:grid-cols-2 md:px-10 md:py-10 ${
 							i !== products.length - 1
 								? "border-b border-saafin-dark-border md:border-b-0 md:border-r"
 								: ""
@@ -58,19 +58,19 @@ export default function FeaturedProducts() {
 					>
 						<div className="flex flex-col justify-between">
 							<div>
-								<h3 className="text-2xl font-semibold leading-snug text-saafin-dark-text md:text-3xl">
+								<h3 className="text-xl font-semibold leading-snug text-saafin-dark-text sm:text-2xl md:text-3xl">
 									{product.name}
 								</h3>
 								<p className="mt-1 text-sm font-medium text-saafin-dark-muted">
 									{product.tagline}
 								</p>
-								<p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
+								<p className="mt-4 max-w-sm text-sm leading-relaxed text-white/90">
 									{product.description}
 								</p>
 							</div>
 
-							<div className="mt-10">
-								<p className="text-xs capitalize tracking-widest text-white/60">Best For</p>
+							<div className="mt-8 md:mt-10">
+								<p className="text-xs capitalize tracking-widest text-white/90">Best For</p>
 								<p className="mt-2 text-sm text-saafin-dark-text">{product.bestFor}</p>
 								<p className="mt-4 text-xs leading-relaxed text-saafin-dark-muted/70 italic">
 									{product.b2bNote}
@@ -81,7 +81,7 @@ export default function FeaturedProducts() {
 								<a
 									href="#contact"
 									id={`ask-ordering-${product.id}`}
-									className="mt-8 inline-flex w-fit items-center gap-3 rounded-saafin-full bg-saafin-dark-surface px-6 py-3 text-sm font-medium text-saafin-dark-text transition-colors hover:bg-saafin-dark-border"
+									className="mt-6 inline-flex w-fit items-center gap-3 rounded-saafin-full bg-saafin-dark-surface px-5 py-2.5 text-sm font-medium text-saafin-dark-text transition-colors hover:bg-saafin-dark-border md:mt-8 md:px-6 md:py-3"
 								>
 									Ask About Ordering
 									<svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
@@ -97,7 +97,7 @@ export default function FeaturedProducts() {
 								alt={product.name}
 								fill
 								loading="lazy"
-								sizes="(max-width: 768px) 100vw, 25vw"
+								sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
 								className="h-full w-full object-cover"
 							/>
 						</div>

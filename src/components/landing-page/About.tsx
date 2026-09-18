@@ -22,14 +22,14 @@ const VALUES = [
 export default function About() {
   return (
     <section id="about" className="dark bg-saafin-dark-bg text-saafin-dark-text">
-      <div className="mx-auto max-w-7xl px-6 pt-32 pb-28 md:px-16 md:pt-44 md:pb-40">
+      <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-16 md:pt-44 md:pb-40">
         <Reveal delay={0.1}>
-          <h2 className="max-w-4xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
+          <h2 className="max-w-4xl text-[clamp(1.875rem,6vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text md:text-[clamp(2.25rem,4vw,3.5rem)]">
             A New Brand, Built Carefully.
           </h2>
         </Reveal>
 
-        <div className="mt-20 grid grid-cols-1 gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
+        <div className="mt-12 grid grid-cols-1 gap-10 md:mt-20 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
           <Reveal className="relative aspect-4/5 w-full overflow-hidden rounded-saafin-lg md:aspect-auto" delay={0.15}>
             <Image
               src="https://ik.imagekit.io/mmyzvdovbv/Saafin/Picsart_26-09-03_20-59-09-634.jpg.jpeg?updatedAt=1788451282136"
@@ -43,7 +43,7 @@ export default function About() {
 
           <div className="flex flex-col">
             <Reveal delay={0.2}>
-              <p className="max-w-[55ch] text-lg leading-[1.65] text-saafin-dark-text/75">
+              <p className="max-w-[55ch] text-base leading-[1.65] text-saafin-dark-text/75 md:text-lg">
                 SAAFIN is a Pakistani bottled water brand. We&apos;re early in our
                 journey, and we&apos;d rather tell you exactly where we stand than
                 pretend otherwise. Right now, that means a small, defined process
@@ -52,14 +52,14 @@ export default function About() {
               </p>
             </Reveal>
 
-            <div className="mt-20 grid gap-12 sm:grid-cols-3 md:grid-cols-1">
+            <div className="mt-12 grid gap-10 sm:grid-cols-3 md:mt-20 md:grid-cols-1 md:gap-12">
               {VALUES.map((value, index) => (
                 <Reveal key={value.title} delay={0.25 + index * 0.1}>
                   <div>
-                    <p className="text-xl font-medium tracking-tight text-saafin-dark-text md:text-2xl">
+                    <p className="text-lg font-medium tracking-tight text-saafin-dark-text md:text-2xl">
                       {value.title}
                     </p>
-                    <p className="mt-4 max-w-xs text-base leading-[1.65] text-saafin-dark-muted">
+                    <p className="mt-3 max-w-xs text-sm leading-[1.65] text-saafin-dark-muted md:mt-4 md:text-base">
                       {value.description}
                     </p>
                   </div>

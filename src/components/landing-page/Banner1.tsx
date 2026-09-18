@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
 
@@ -38,34 +37,7 @@ const IMAGE =
 
 export default function Combine() {
   const [active, setActive] = useState("packaging");
-  const [displayItem, setDisplayItem] = useState(
-    ACCORDION_ITEMS.find((item) => item.key === "packaging")!
-  );
-  const descRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    const nextItem = ACCORDION_ITEMS.find((item) => item.key === active)!;
-    const el = descRef.current;
-    if (!el) return;
-
-    const tl = gsap.timeline();
-    tl.to(el, {
-      opacity: 0,
-      y: 12,
-      duration: 0.25,
-      ease: "power2.in",
-    }).call(() => setDisplayItem(nextItem));
-    tl.to(el, {
-      opacity: 1,
-      y: 0,
-      duration: 0.45,
-      ease: "power2.out",
-    });
-
-    return () => {
-      tl.kill();
-    };
-  }, [active]);
+  const displayItem = ACCORDION_ITEMS.find((item) => item.key === active)!;
 
   return (
     <section className="dark relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-saafin-dark-bg text-saafin-dark-text">
@@ -104,7 +76,7 @@ export default function Combine() {
                 className={`flex w-fit items-center gap-2 text-2xl font-semibold drop-shadow-sm transition-colors md:text-3xl ${
                   active === item.key
                     ? "text-white"
-                    : "text-white/50 hover:text-white/75"
+                    : "text-white/90 hover:text-white/75"
                 }`}
               >
                 <span className="text-xl">+</span>
@@ -118,7 +90,6 @@ export default function Combine() {
       <div className="relative z-10 grid grid-cols-1 border-t border-white/15 bg-saafin-dark-bg/20 backdrop-blur-sm md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
         <Reveal className="border-b border-white/15 px-6 py-10 md:border-b-0 md:border-r md:px-10 md:py-12" delay={0.2}>
           <p
-            ref={descRef}
             className="max-w-sm text-base leading-relaxed text-saafin-dark-text md:text-lg"
           >
             {displayItem.description}

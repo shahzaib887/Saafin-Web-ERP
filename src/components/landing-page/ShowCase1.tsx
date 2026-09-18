@@ -81,20 +81,20 @@ const REASONS = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="w-full bg-black py-20 md:py-28">
+    <section className="w-full bg-black py-14 md:py-28">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         {/* Header */}
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <Reveal delay={0.1}>
-            <span className="inline-flex items-center rounded-md border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-white/70 mb-6 block w-fit">
+            <span className="inline-flex items-center rounded-md border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-white/90 mb-4 block w-fit md:mb-6">
               Why SAAFIN
             </span>
-            <h2 className="max-w-xl text-4xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className="max-w-xl text-[clamp(1.75rem,6vw,2.5rem)] font-medium leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               What you&apos;re actually getting.
             </h2>
           </Reveal>
           <Reveal delay={0.2} className="max-w-sm">
-            <p className="text-sm leading-relaxed text-white/60 md:text-base">
+            <p className="text-sm leading-relaxed text-white/90 md:text-base">
               No borrowed credibility. No invented numbers. Just the things
               SAAFIN can genuinely offer right now.
             </p>
@@ -107,22 +107,22 @@ export default function WhyChooseUs() {
             <Reveal
               key={reason.number}
               delay={0.1 + i * 0.1}
-              className="relative flex flex-col rounded-2xl border border-white/10 bg-white/5 p-8"
+              className="relative flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8"
             >
               {/* Number */}
-              <span className="mb-8 text-xs font-medium uppercase tracking-widest text-white/30">
+              <span className="mb-6 text-xs font-medium uppercase tracking-widest text-white/90 md:mb-8">
                 {reason.number}
               </span>
 
               {/* Icon */}
-              <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white/70">
+              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white/90 md:mb-6">
                 <div className="h-5 w-5">{reason.icon}</div>
               </div>
 
-              <h3 className="mb-3 text-lg font-semibold text-white">
+              <h3 className="mb-3 text-base font-semibold text-white md:text-lg">
                 {reason.title}
               </h3>
-              <p className="text-sm leading-relaxed text-white/60">
+              <p className="text-sm leading-relaxed text-white/90">
                 {reason.description}
               </p>
             </Reveal>

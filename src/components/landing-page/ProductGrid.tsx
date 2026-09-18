@@ -34,7 +34,7 @@ export default function ProductGrid() {
       id="products"
       className="dark bg-saafin-dark-bg text-saafin-dark-text"
     >
-      <div className="mx-auto max-w-7xl px-6 pt-32 pb-20 md:px-16 md:pt-44 md:pb-28">
+      <div className="mx-auto max-w-7xl px-6 pt-20 pb-14 md:px-16 md:pt-44 md:pb-28">
         <Reveal
           className="flex items-center gap-2 text-saafin-dark-muted"
           delay={0.1}
@@ -55,12 +55,12 @@ export default function ProductGrid() {
         </Reveal>
 
         <Reveal delay={0.18}>
-          <h2 className="mt-7 max-w-4xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
+          <h2 className="mt-5 max-w-4xl text-[clamp(1.875rem,6vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text md:mt-7 md:text-[clamp(2.25rem,4vw,3.5rem)]">
             Three Sizes, One Standard.
           </h2>
         </Reveal>
         <Reveal delay={0.24}>
-          <p className="mt-5 max-w-[48ch] text-base leading-[1.65] text-saafin-dark-muted">
+          <p className="mt-4 max-w-[48ch] text-base leading-[1.65] text-saafin-dark-muted md:mt-5">
             Whatever the occasion, SAAFIN keeps the same process behind every
             bottle.
           </p>
@@ -71,7 +71,7 @@ export default function ProductGrid() {
         {CARDS.map((card, i) => (
           <Reveal
             key={card.label}
-            className={`flex flex-col border-saafin-dark-border px-6 pt-12 md:px-10 md:pt-16 ${i !== CARDS.length - 1
+            className={`flex flex-col border-saafin-dark-border px-6 pt-10 md:px-10 md:pt-16 ${i !== CARDS.length - 1
                 ? "border-b sm:border-b-0 lg:border-b-0 lg:border-r"
                 : ""
               }`}
@@ -86,21 +86,21 @@ export default function ProductGrid() {
               </span>
             </div>
 
-            <div className="relative mt-8 aspect-[4/5] w-full overflow-hidden rounded-saafin-lg">
+            <div className="relative mt-6 aspect-[4/5] w-full overflow-hidden rounded-saafin-lg md:mt-8">
               <Image
                 src={card.image}
                 alt={`${card.label} — ${card.stat} bottled drinking water`}
                 fill
                 loading="lazy"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="h-full w-full object-cover"
               />
             </div>
 
-            <p className="mt-7 text-base leading-[1.65] text-saafin-dark-muted">
+            <p className="mt-5 text-base leading-[1.65] text-saafin-dark-muted md:mt-7">
               {card.tagline}
             </p>
-            <p className="mt-3 pb-12 text-xs tracking-widest text-saafin-dark-muted/60 uppercase">
+            <p className="mt-3 pb-10 text-xs tracking-widest text-saafin-dark-muted/60 uppercase md:pb-12">
               {card.bestFor}
             </p>
           </Reveal>

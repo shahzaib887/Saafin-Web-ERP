@@ -52,10 +52,10 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section id="process" className="dark bg-saafin-dark-bg text-saafin-dark-text">
-      <div className="mx-auto max-w-7xl px-6 pt-32 pb-36 md:px-16 md:pt-44 md:pb-48">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
+      <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:px-16 md:pt-44 md:pb-48">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start md:gap-6">
           <Reveal delay={0.1}>
-            <h2 className="max-w-3xl text-[clamp(2.25rem,4vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text">
+            <h2 className="max-w-3xl text-[clamp(1.875rem,6vw,3.5rem)] capitalize font-medium leading-[1.1] tracking-tighter text-saafin-dark-text md:text-[clamp(2.25rem,4vw,3.5rem)]">
               How a SAAFIN Bottle Gets to You.
             </h2>
           </Reveal>
@@ -67,7 +67,7 @@ export default function HowItWorks() {
           </Reveal>
         </div>
 
-        <div className="mt-24 grid grid-cols-1 gap-14 sm:grid-cols-2 md:grid-cols-4 md:gap-14">
+        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-24 md:grid-cols-4 md:gap-14">
           {STEPS.map((step, index) => (
             <Reveal key={step.number} delay={0.12 + index * 0.08}>
               <div>
@@ -78,10 +78,10 @@ export default function HowItWorks() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-base font-semibold text-saafin-dark-text">
+                <h3 className="mt-4 text-base font-semibold text-saafin-dark-text md:mt-6">
                   {step.title}
                 </h3>
-                <p className="mt-4 text-base leading-[1.65] text-saafin-dark-muted">
+                <p className="mt-3 text-sm leading-[1.65] text-saafin-dark-muted md:mt-4 md:text-base">
                   {step.description}
                 </p>
               </div>

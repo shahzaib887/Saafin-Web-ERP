@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import gsap from "gsap";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -15,58 +14,11 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const tlRef = useRef<gsap.core.Timeline | null>(null);
-
-  // GSAP timeline (sirf ek dafa banta hai)
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Initial states
-      gsap.set(overlayRef.current, { autoAlpha: 0 });
-      gsap.set(panelRef.current, { yPercent: 100 });
-      gsap.set(".mobile-link", { y: 40, autoAlpha: 0 });
-
-      tlRef.current = gsap
-        .timeline({ paused: true })
-        // 1. Background blur fade-in
-        .to(overlayRef.current, {
-          autoAlpha: 1,
-          duration: 0.35,
-          ease: "power2.out",
-        })
-        // 2. Panel bottom se upar slide
-        .to(
-          panelRef.current,
-          { yPercent: 0, duration: 0.6, ease: "power4.out" },
-          "-=0.15",
-        )
-        // 3. Links stagger mein appear
-        .to(
-          ".mobile-link",
-          {
-            y: 0,
-            autoAlpha: 1,
-            stagger: 0.07,
-            duration: 0.4,
-            ease: "power3.out",
-          },
-          "-=0.3",
-        );
-    });
-
-    return () => ctx.revert();
-  }, []);
-
-  // Open / Close control
-  useEffect(() => {
-    if (open) {
-      tlRef.current?.play();
-      document.body.style.overflow = "hidden"; // scroll lock
-    } else {
-      tlRef.current?.reverse();
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
       document.body.style.overflow = "";
-    }
+    };
   }, [open]);
 
   useEffect(() => {
@@ -146,15 +98,13 @@ export default function Navbar() {
 
       {/* ================= MOBILE MENU ================= */}
       <div
-        ref={overlayRef}
         onClick={() => setOpen(false)}
-        className="invisible fixed inset-0 z-[60] bg-black/60 backdrop-blur-xl md:hidden"
+        className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-xl md:hidden ${open ? "visible" : "invisible pointer-events-none"}`}
       >
         {/* Panel — bottom se slide hota hai */}
         <div
-          ref={panelRef}
           onClick={(e) => e.stopPropagation()}
-          className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-3xl border-t border-white/15 bg-black/55 px-8 pt-6 pb-10"
+          className={`absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-3xl border-t border-white/15 bg-black/55 px-8 pt-6 pb-10 ${open ? "translate-y-0" : "translate-y-full"}`}
         >
           {/* Close button */}
           <div className="flex justify-end">

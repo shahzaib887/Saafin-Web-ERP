@@ -7,6 +7,8 @@ import ProductGrid from "@/components/landing-page/ProductGrid";
 import HowItWorks from "@/components/landing-page/Steps";
 import RenewalsSection from "@/components/landing-page/ShowCase1";
 import SetupImpactSection from "@/components/landing-page/SetupImpactSection";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "SAAFIN — Bottled Drinking Water in Pakistan",
@@ -40,14 +42,17 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
-      <ProductGrid />
-      <FeaturedProducts />
-    <RenewalsSection/>
-    <SetupImpactSection/>
-      <About />
-      <HowItWorks />
-      <Footer />
+      <SmoothScroll>
+        <Hero />
+        <ProductGrid />
+        <FeaturedProducts />
+        <RenewalsSection />
+        <SetupImpactSection />
+        <About />
+        <HowItWorks />
+        <Footer />
+        <WhatsAppButton />
+      </SmoothScroll>
     </>
   );
 }

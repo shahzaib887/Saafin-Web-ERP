@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/landing-page/Navbar";
-import { SmoothScroll } from "@/components/SmoothScroll";
+import SmoothScroll from "@/components/SmoothScroll";
 import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
 

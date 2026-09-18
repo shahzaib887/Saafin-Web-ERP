@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
@@ -15,7 +13,7 @@ const BLUR_DATA_URL =
 
 export default function Hero() {
   return (
-    <section className="relative flex h-screen min-h-[720px] w-full items-center justify-center overflow-hidden bg-white md:bg-[#0A1B1F]">
+    <section className="relative flex h-screen min-h-[560px] w-full items-center justify-center overflow-hidden bg-white md:min-h-[720px] md:bg-[#0A1B1F]">
       <Reveal className="absolute inset-0" delay={0.15}>
         <picture className="absolute inset-0 block">
           <source media="(max-width: 720px)" srcSet={MOBILE_HERO_IMAGE} />
@@ -57,26 +55,26 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[34%] bg-gradient-to-t from-black/80 via-black/25 to-transparent md:hidden"
       />
 
-      <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-20 text-left md:px-16 md:pb-28">
+      <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start px-6 pb-14 text-left md:px-16 md:pb-28">
         <Reveal className="w-full" delay={0.1}>
-          <h1 className="max-w-4xl font-[family-name:var(--font-heading)] capitalize text-[clamp(3rem,6vw,4.5rem)] font-medium leading-[1.05] tracking-tighter text-black md:text-white/90">
+          <h1 className="max-w-4xl font-[family-name:var(--font-heading)] capitalize text-[clamp(2.25rem,8vw,3rem)] font-medium leading-[1.05] tracking-tighter text-black md:text-[clamp(3rem,6vw,4.5rem)] md:text-white/90">
             Clean Water, Done Properly.
           </h1>
         </Reveal>
 
-        <Reveal className="mt-6 max-w-2xl" delay={0.2}>
-          <p className="max-w-[520px] text-balance text-lg font-normal leading-relaxed text-black/70 md:text-white/75">
+        <Reveal className="mt-4 max-w-2xl md:mt-6" delay={0.2}>
+          <p className="max-w-[520px] text-balance text-base font-normal leading-relaxed text-black/70 md:text-lg md:text-white/75">
             SAAFIN bottles drinking water for homes, offices, and businesses —
             sourced, checked, sealed, and sent out the same careful way, every
             time.
           </p>
         </Reveal>
 
-        <Reveal className="mt-8 flex flex-wrap gap-3" delay={0.3}>
+        <Reveal className="mt-6 flex flex-wrap gap-3 md:mt-8" delay={0.3}>
           <a
             href="#products"
             id="hero-view-products"
-            className="inline-flex items-center gap-3 rounded-full bg-black px-9 py-[17px] text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#F6C083] hover:text-[#0A1B1F] md:bg-white md:text-[#0A1B1F]"
+            className="inline-flex items-center gap-3 rounded-full bg-black px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#F6C083] hover:text-[#0A1B1F] md:bg-white md:px-9 md:py-[17px] md:text-[#0A1B1F]"
           >
             View Our Products
             <svg
@@ -90,7 +88,7 @@ export default function Hero() {
           <a
             href="#b2b"
             id="hero-supply-business"
-            className="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-9 py-[17px] text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white/20"
+            className="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white/20 md:px-9 md:py-[17px]"
           >
             Supply My Business
           </a>

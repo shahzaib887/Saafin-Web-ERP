@@ -32,20 +32,20 @@ const HOW_IT_WORKS = [
 
 export default function B2BSection() {
   return (
-    <section id="b2b" className="w-full bg-black py-20 md:py-28">
+    <section id="b2b" className="w-full bg-black py-14 md:py-28">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10 md:mb-16">
           <Reveal delay={0.1}>
-            <span className="inline-block rounded-md border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-white/70 mb-6">
+            <span className="inline-block rounded-md border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-white/90 mb-4 md:mb-6">
               For Businesses
             </span>
-            <h2 className="max-w-2xl text-4xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className="max-w-2xl text-[clamp(1.75rem,6vw,2.5rem)] font-medium leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Supplying your business.
             </h2>
           </Reveal>
-          <Reveal delay={0.2} className="mt-6 max-w-xl">
-            <p className="text-base leading-relaxed text-white/60 md:text-lg">
+          <Reveal delay={0.2} className="mt-4 max-w-xl md:mt-6">
+            <p className="text-base leading-relaxed text-white/90 md:text-lg">
               Offices, restaurants, cafes, and events — if you need bottled
               water regularly, we&apos;ll work out a supply plan that fits how
               you order.
@@ -53,20 +53,20 @@ export default function B2BSection() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left — Who this is for */}
           <Reveal delay={0.15} className="flex flex-col">
-            <p className="mb-6 text-xs font-medium uppercase tracking-widest text-white/40">
+            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/90 md:mb-6">
               Who this is for
             </p>
             <div className="flex flex-col gap-3">
               {WHO_FOR.map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 px-6 py-4"
+                  className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 md:px-6 md:py-4"
                 >
                   <span className="text-xl">{item.icon}</span>
-                  <span className="text-sm font-medium text-white/80">
+                  <span className="text-sm font-medium text-white/90">
                     {item.label}
                   </span>
                 </div>
@@ -76,22 +76,22 @@ export default function B2BSection() {
 
           {/* Right — How it works */}
           <Reveal delay={0.2} className="flex flex-col">
-            <p className="mb-6 text-xs font-medium uppercase tracking-widest text-white/40">
+            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/90 md:mb-6">
               How it works
             </p>
             <div className="flex flex-col gap-4">
               {HOW_IT_WORKS.map((item, i) => (
                 <div
                   key={item.step}
-                  className="relative rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
+                  className="relative rounded-xl border border-white/10 bg-white/5 p-5 md:p-8"
                 >
-                  <p className="mb-3 text-xs font-medium uppercase tracking-wider text-white/40">
+                  <p className="mb-3 text-xs font-medium uppercase tracking-wider text-white/90">
                     Step {item.step}
                   </p>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-white md:text-lg">
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-white/60">
+                  <p className="text-sm leading-relaxed text-white/90">
                     {item.description}
                   </p>
                 </div>
@@ -99,11 +99,11 @@ export default function B2BSection() {
             </div>
 
             {/* CTA */}
-            <div className="mt-8">
+            <div className="mt-6 md:mt-8">
               <Link
                 href="/contact"
                 id="b2b-supply-cta"
-                className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:bg-white/85 hover:scale-[1.02]"
+                className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-white/85 hover:scale-[1.02] md:px-8 md:py-4"
               >
                 Talk to Us About Supply
                 <svg
@@ -119,10 +119,7 @@ export default function B2BSection() {
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </Link>
-              <p className="mt-4 text-xs text-white/40">
-                Ordering for a business? Include your expected sizes and
-                quantities — it helps us respond faster.
-              </p>
+
             </div>
           </Reveal>
         </div>
