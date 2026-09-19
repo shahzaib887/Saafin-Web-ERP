@@ -94,10 +94,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://ik.imagekit.io" />
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
       </head>
-      <body className="min-h-full flex flex-col bg-saafin-dark-bg">
+      <body className="min-h-full flex flex-col bg-saafin-dark-bg" cz-shortcut-listen="true"> 
         <Navbar />
         <main role="main" className="flex-1">
-          <SmoothScroll>{children}</SmoothScroll>
+          {children}
         </main>
         <JsonLd />
       </body>
